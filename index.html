@@ -327,6 +327,10 @@ footer .logo-text b{color:#fff}
 .love-card h2 .big-heart{display:inline-block;animation:beat 1s ease-in-out infinite;color:#fff}
 .love-card p{margin-top:22px;font-size:clamp(20px,4vw,34px);font-weight:900;color:var(--plum);background:#fff;display:inline-block;padding:8px 26px;border-radius:999px}
 .love-card .hearts span{position:absolute;bottom:-40px;font-size:30px;color:#fff;opacity:.85;animation:rise 4s linear infinite}
+.marry-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:30px}
+.marry-actions button{border:0;border-radius:999px;padding:14px 38px;font-size:clamp(20px,4vw,30px);font-weight:900;cursor:pointer;font-family:inherit}
+.marry-actions .yes{background:#fff;color:var(--pink-600);box-shadow:0 8px 24px rgba(74,21,53,.3);animation:beat 1.4s ease-in-out infinite}
+.marry-actions .no,body>.no{background:rgba(255,255,255,.25);color:#fff;z-index:210;border:0;border-radius:999px;padding:14px 38px;font-size:clamp(20px,4vw,30px);font-weight:900;font-family:inherit;transition:left .15s,top .15s}
 .love-card small{display:block;margin-top:20px;font-weight:800;color:#fff;opacity:.85;font-size:14px}
 @keyframes loveFade{from{opacity:0}}
 @keyframes loveOut{to{opacity:0;transform:scale(1.05)}}
@@ -1331,18 +1335,34 @@ function stopSlider() { clearInterval(timer); }
     el.className = 'love';
     el.setAttribute('role', 'dialog');
     el.setAttribute('aria-live', 'polite');
-    el.innerHTML = `<div class="love-card"><div class="hearts">${hearts()}</div>${html}<small>tap to close</small></div>`;
+    el.innerHTML = `<div class="love-card"><div class="hearts">${hearts()}</div>${html}${ms ? '<small>tap to close</small>' : ''}</div>`;
     document.body.appendChild(el);
     let closed = false;
     const close = () => { if (closed) return; closed = true; el.classList.add('out'); setTimeout(() => { el.remove(); done && done(); }, 600); };
-    el.addEventListener('click', close);
-    setTimeout(close, ms);
+    if (ms) { el.addEventListener('click', close); setTimeout(close, ms); }
+    return { el, close };
   }
-  setTimeout(() => show(`<h2>ALEKS<br><span style="white-space:nowrap"><span class="big-heart">♥</span> LOVES <span class="big-heart">♥</span></span><br>AVA</h2>`, 5000, () => {
-    setTimeout(() => {
-      show(`<h2 style="font-size:clamp(34px,7.5vw,80px)">HOPE TO SEE YOU SOON IN CHINA <span class="big-heart">♥</span></h2><p>ALEKS + AVA</p>`, 5000);
-    }, 15000);
-  }), 10000);
+  function propose() {
+    const { el, close } = show(`<h2 style="font-size:clamp(34px,7.5vw,84px)">DO YOU WANT TO MARRY ME? <span class="big-heart">♥</span></h2>
+      <div class="marry-actions"><button class="yes">YES ♥</button><button class="no">NO</button></div>`, 0);
+    const no = el.querySelector('.no');
+    const dodge = e => {
+      e.preventDefault();
+      if (no.parentNode !== document.body) document.body.appendChild(no);
+      no.style.position = 'fixed';
+      no.style.left = Math.random() * (innerWidth - no.offsetWidth) + 'px';
+      no.style.top = Math.random() * (innerHeight - no.offsetHeight) + 'px';
+    };
+    no.addEventListener('mouseenter', dodge);
+    no.addEventListener('touchstart', dodge, { passive: false });
+    no.addEventListener('click', dodge);
+    el.querySelector('.yes').addEventListener('click', () => {
+      no.remove();
+      close();
+      setTimeout(() => show(`<h2><span class="big-heart">♥</span> YES! <span class="big-heart">♥</span></h2><p>ALEKS + AVA FOREVER</p>`, 8000), 700);
+    });
+  }
+  setTimeout(propose, 5000);
 })();
 
 $('#menu-btn').addEventListener('click', () => { const o = $('#nav').classList.toggle('open'); $('#menu-btn').setAttribute('aria-expanded', o); });
