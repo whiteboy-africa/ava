@@ -1,0 +1,1353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AVA's Cute Machinery</title>
+<meta name="description" content="AVA's Cute Machinery – mini excavators, skid steer loaders, remote control mowers and attachments for dealers, contractors and farms.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --pink-50:#fff5f9;--pink-100:#ffe4ef;--pink-200:#ffc9de;--pink-300:#ff9fc4;--pink-400:#ff6fa6;
+  --pink-500:#f0468a;--pink-600:#d42a70;--pink-700:#a91d57;
+  --plum:#4a1535;--plum-2:#6b2450;--lilac:#e9d8ff;--peach:#ffd9c7;
+  --text:#3b1830;--muted:#8a5a77;--white:#fff;
+  --radius:22px;--shadow:0 10px 30px rgba(212,42,112,.14);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;color:var(--text);background:var(--pink-50);line-height:1.6}
+a{color:inherit;text-decoration:none}
+img,svg{display:block;max-width:100%}
+button,input,select,textarea{font-family:inherit}
+:focus-visible{outline:3px solid var(--pink-400);outline-offset:2px;border-radius:6px}
+.wrap{max-width:1200px;margin:0 auto;padding-inline:20px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 24px;border-radius:999px;font-weight:800;font-size:15px;transition:.2s;border:2px solid transparent;cursor:pointer;line-height:1.2;text-align:center}
+.btn-primary{background:var(--pink-500);color:#fff;box-shadow:0 6px 18px rgba(240,70,138,.35)}
+.btn-primary:hover{background:var(--pink-600);transform:translateY(-2px)}
+.btn-ghost{border-color:var(--pink-300);color:var(--pink-600);background:#fff}
+.btn-ghost:hover{background:var(--pink-100)}
+.btn-light{background:#fff;color:var(--pink-600)}
+.btn-light:hover{background:var(--pink-100)}
+.btn-outline-light{border-color:#fff;color:#fff}
+.btn-outline-light:hover{background:rgba(255,255,255,.15)}
+.btn-wa{background:#fff;color:var(--plum);border-color:var(--pink-200)}
+.btn-wa:hover{background:var(--pink-100)}
+.btn-sm{padding:10px 16px;font-size:14px}
+.eyebrow{display:inline-block;font-size:13px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:var(--pink-500);margin-bottom:10px}
+.eyebrow::before{content:"♥ "}
+h1,h2,h3{line-height:1.2;color:var(--plum);text-wrap:balance}
+h2{font-size:clamp(28px,4vw,40px);font-weight:900;margin-bottom:14px}
+.section{padding-block:90px}
+.section.tight{padding-top:0}
+.section-head{max-width:720px;margin:0 auto 50px;text-align:center}
+.section-head p{color:var(--muted);font-size:17px}
+.white{background:#fff}
+
+/* topbar + header */
+.topbar{background:var(--plum);color:var(--pink-200);font-size:13px;font-weight:600}
+.topbar .wrap{display:flex;justify-content:space-between;gap:10px;padding-top:8px;padding-bottom:8px;flex-wrap:wrap}
+.topbar span a{margin-left:14px}
+.topbar a:hover{color:#fff}
+header{background:rgba(255,255,255,.94);backdrop-filter:blur(10px);position:sticky;top:env(safe-area-inset-top,0px);z-index:50;border-bottom:1px solid var(--pink-100)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:78px;gap:16px}
+.logo{display:flex;align-items:center;gap:10px;flex:none}
+.logo-mark{width:46px;height:46px}
+.logo-text{line-height:1}
+.logo-text b{display:block;font-size:22px;font-weight:900;color:var(--pink-600);letter-spacing:-.02em}
+.logo-text small{font-size:11px;font-weight:800;letter-spacing:.2em;color:var(--pink-400);text-transform:uppercase}
+nav ul{display:flex;gap:22px;list-style:none;font-weight:700;font-size:15px;align-items:center}
+nav a:hover,nav a.on{color:var(--pink-500)}
+.has-dd{position:relative}
+.dd-toggle{display:inline-flex;align-items:center;gap:6px}
+.dd-toggle svg{transition:.2s}
+.dd{position:absolute;top:100%;left:-16px;min-width:240px;background:#fff;border-radius:16px;padding:10px;box-shadow:var(--shadow);border:1px solid var(--pink-100);display:none;flex-direction:column;margin-top:12px}
+.dd::before{content:"";position:absolute;top:-14px;left:0;right:0;height:14px}
+.dd a{padding:10px 14px;border-radius:10px;font-weight:700}
+.dd a:hover{background:var(--pink-100);color:var(--pink-600)}
+.has-dd:hover .dd,.has-dd:focus-within .dd{display:flex}
+.has-dd:hover .dd-toggle svg{transform:rotate(180deg)}
+.header-cta{display:flex;gap:10px;align-items:center}
+.menu-btn{display:none;background:var(--pink-100);border:0;border-radius:12px;padding:10px 14px;font-weight:800;color:var(--pink-600);cursor:pointer}
+
+/* hero (home) */
+.hero{position:relative;overflow:hidden;background:
+  radial-gradient(circle at 85% 20%,var(--lilac) 0,transparent 40%),
+  radial-gradient(circle at 10% 90%,var(--peach) 0,transparent 35%),
+  linear-gradient(135deg,var(--pink-100),var(--pink-200))}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:40px;align-items:center;padding-top:80px;padding-bottom:90px}
+.hero h1{font-size:clamp(34px,5vw,56px);font-weight:900;margin-bottom:18px;letter-spacing:-.02em}
+.hero h1 em{font-style:normal;color:var(--pink-500)}
+.hero p.lead{font-size:18px;color:var(--plum-2);max-width:520px;margin-bottom:24px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:30px}
+.chip{background:#fff;border-radius:999px;padding:8px 16px;font-size:14px;font-weight:800;color:var(--pink-600);box-shadow:0 3px 10px rgba(212,42,112,.1)}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.hero-art{position:relative}
+.hero-art .blob{position:absolute;inset:6% 4%;background:#fff;border-radius:45% 55% 50% 50%/55% 45% 55% 45%;opacity:.7}
+.hero-art svg{position:relative;width:100%}
+.float{animation:float 5s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-10px)}}
+.sparkle{position:absolute;color:var(--pink-400);font-size:24px;animation:twinkle 2.4s ease-in-out infinite}
+@keyframes twinkle{50%{opacity:.25;transform:scale(.7)}}
+.slider-dots{display:flex;gap:8px;margin-top:34px}
+.slider-dots button{width:12px;height:12px;border-radius:50%;border:0;background:var(--pink-300);cursor:pointer}
+.slider-dots button.on{width:32px;border-radius:8px;background:var(--pink-500)}
+
+.strip{background:var(--pink-500);color:#fff}
+.strip .wrap{display:grid;grid-template-columns:repeat(8,1fr)}
+.strip a{padding:18px 10px;text-align:center;font-weight:800;font-size:14px;border-right:1px solid rgba(255,255,255,.2)}
+.strip a:last-child{border-right:0}
+.strip a:hover{background:var(--pink-600)}
+
+/* grids & cards */
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
+.cat{background:#fff;border-radius:var(--radius);padding:26px;box-shadow:var(--shadow);transition:.25s;display:flex;flex-direction:column}
+.cat:hover{transform:translateY(-6px)}
+.cat .ill{background:var(--pink-100);border-radius:16px;height:170px;display:grid;place-items:center;margin-bottom:20px}
+.cat .ill svg{height:130px}
+.cat h3{font-size:20px;font-weight:900;margin-bottom:8px}
+.cat p{color:var(--muted);font-size:15px;flex:1}
+.cat .more{margin-top:16px;font-weight:800;color:var(--pink-500)}
+.prod{border:2px solid var(--pink-100);border-radius:var(--radius);overflow:hidden;background:var(--pink-50);transition:.25s;display:flex;flex-direction:column}
+.prod:hover{border-color:var(--pink-300);box-shadow:var(--shadow)}
+.prod .ill{height:200px;display:grid;place-items:center;position:relative;background:linear-gradient(160deg,var(--pink-100),var(--lilac))}
+.prod .ill svg{height:150px}
+.tag{position:absolute;top:14px;left:14px;background:#fff;color:var(--pink-600);font-size:12px;font-weight:900;padding:5px 12px;border-radius:999px}
+.prod .body{padding:22px;display:flex;flex-direction:column;flex:1}
+.prod h3{font-size:20px;font-weight:900;margin-bottom:10px}
+.prod ul{list-style:none;margin-bottom:18px;flex:1}
+.prod li{font-size:15px;color:var(--muted);padding:3px 0 3px 22px;position:relative}
+.prod li::before{content:"♥";position:absolute;left:0;color:var(--pink-400);font-size:12px;top:6px}
+.prod .actions{display:flex;gap:8px;flex-wrap:wrap}
+.white .prod{background:var(--pink-50)}
+
+.confidence{background:linear-gradient(135deg,var(--plum),var(--plum-2));color:#fff}
+.confidence h2,.confidence h3{color:#fff}
+.confidence .section-head p{color:var(--pink-200)}
+.confidence .eyebrow{color:var(--pink-300)}
+.step{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:var(--radius);padding:28px}
+.step .num{font-size:13px;font-weight:900;letter-spacing:.12em;color:var(--pink-300);margin-bottom:12px}
+.step h3{font-size:19px;margin-bottom:8px}
+.step p{color:var(--pink-100);font-size:15px}
+.note{margin-top:34px;text-align:center;font-size:14px;color:var(--pink-200);max-width:760px;margin-left:auto;margin-right:auto}
+
+.apps{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:24px}
+.app{border-radius:var(--radius);padding:30px;min-height:300px;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden;color:var(--plum);transition:.25s}
+.app:hover{transform:translateY(-4px)}
+.app.c1{background:linear-gradient(160deg,var(--pink-200),var(--pink-300))}
+.app.c2{background:linear-gradient(160deg,var(--lilac),#d6bfff)}
+.app.c3{background:linear-gradient(160deg,var(--peach),#ffc0a8)}
+.app svg{position:absolute;top:20px;right:20px;height:150px}
+.app h3{font-size:22px;font-weight:900;margin-bottom:6px;position:relative}
+.app p{position:relative;font-size:15px;max-width:340px}
+
+.attach-wrap{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+.attach-col{background:#fff;border-radius:var(--radius);padding:30px;box-shadow:var(--shadow)}
+.attach-col .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px;gap:10px;flex-wrap:wrap}
+.attach-col h3{font-size:22px;font-weight:900}
+.attach-col .top a{font-weight:800;color:var(--pink-500);font-size:14px}
+.att-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.att{background:var(--pink-50);border-radius:16px;padding:18px;border:2px solid var(--pink-100);transition:.2s;display:block}
+.att:hover{border-color:var(--pink-300)}
+.att small{font-size:11px;font-weight:900;letter-spacing:.1em;color:var(--pink-400)}
+.att b{display:block;font-size:17px;color:var(--plum);margin:4px 0 2px}
+.att span{font-size:14px;color:var(--muted)}
+
+.partner{text-align:center;padding:30px 24px;border-radius:var(--radius);background:var(--pink-50);border:2px dashed var(--pink-200)}
+.partner .ico{width:64px;height:64px;border-radius:50%;background:var(--pink-200);display:grid;place-items:center;margin:0 auto 16px;color:var(--pink-700)}
+.partner .ico svg{width:30px;height:30px}
+.partner h3{font-size:19px;margin-bottom:8px}
+.partner p{color:var(--muted);font-size:15px}
+
+.dealer{background:linear-gradient(120deg,var(--pink-500),var(--pink-400));color:#fff;border-radius:32px;padding:60px;display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center;position:relative;overflow:hidden}
+.dealer::after{content:"♥";position:absolute;right:-30px;bottom:-90px;font-size:320px;opacity:.12;line-height:1}
+.dealer h2{color:#fff}
+.dealer .eyebrow{color:var(--pink-100)}
+.dealer p{font-size:17px;margin-bottom:26px}
+.dealer .actions{display:flex;gap:12px;flex-wrap:wrap}
+.dealer-list{display:grid;grid-template-columns:1fr 1fr;gap:12px;position:relative;z-index:1}
+.dealer-list div{background:rgba(255,255,255,.18);border-radius:16px;padding:18px;font-weight:800;text-align:center}
+
+.pdi{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start}
+.pdi p{color:var(--muted);margin-bottom:16px}
+.box{background:#fff;border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);margin:22px 0}
+.box h3{font-size:18px;margin-bottom:6px}
+.actions{display:flex;gap:10px;flex-wrap:wrap}
+.checks{display:grid;gap:14px}
+.check{display:flex;gap:16px;align-items:flex-start;background:#fff;border-radius:18px;padding:18px 20px;border:2px solid var(--pink-100)}
+.check .n{flex:none;width:36px;height:36px;border-radius:50%;background:var(--pink-100);color:var(--pink-600);font-weight:900;display:grid;place-items:center}
+.check b{display:block;color:var(--plum)}
+.check span{font-size:14px;color:var(--muted)}
+
+.article{border-radius:var(--radius);background:var(--pink-50);padding:26px;display:flex;flex-direction:column;border:2px solid var(--pink-100);transition:.2s}
+.article:hover{transform:translateY(-4px);border-color:var(--pink-300)}
+.article small{font-size:12px;font-weight:900;letter-spacing:.1em;color:var(--pink-500)}
+.article h3{font-size:18px;margin:10px 0}
+.article p{color:var(--muted);font-size:14px;flex:1}
+.article .go{margin-top:16px;font-weight:800;color:var(--pink-600)}
+.res-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:34px;flex-wrap:wrap}
+.res-head p{color:var(--muted);max-width:620px}
+.res{background:linear-gradient(160deg,#fff,var(--pink-100));border-radius:var(--radius);padding:30px;box-shadow:var(--shadow);display:block}
+.res small{font-size:12px;font-weight:900;letter-spacing:.1em;color:var(--pink-500)}
+.res h3{font-size:21px;margin:10px 0}
+.res p{color:var(--muted);font-size:15px;margin-bottom:18px}
+.res .go{font-weight:900;color:var(--pink-600);font-size:14px;letter-spacing:.04em}
+
+.faq{max-width:820px;margin:0 auto}
+details{background:#fff;border-radius:18px;margin-bottom:12px;box-shadow:0 4px 14px rgba(212,42,112,.08);overflow:hidden}
+summary{padding:20px 24px;font-weight:800;font-size:17px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:14px;color:var(--plum)}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:26px;color:var(--pink-500);transition:.2s;flex:none}
+details[open] summary::after{transform:rotate(45deg)}
+details p{padding:0 24px 22px;color:var(--muted)}
+
+.quote{background:linear-gradient(135deg,var(--plum),var(--pink-700));color:#fff}
+.quote .wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:50px;align-items:center}
+.quote h2{color:#fff}
+.quote .eyebrow{color:var(--pink-300)}
+.quote p{color:var(--pink-100);font-size:17px;margin-bottom:26px}
+.info{background:rgba(255,255,255,.1);border-radius:var(--radius);padding:32px;border:1px solid rgba(255,255,255,.2)}
+.info h3{color:#fff;font-size:20px;margin-bottom:16px}
+.info ul{list-style:none}
+.info li{padding:9px 0 9px 30px;position:relative;border-bottom:1px solid rgba(255,255,255,.12)}
+.info li::before{content:"✓";position:absolute;left:0;width:20px;height:20px;border-radius:50%;background:var(--pink-400);font-size:12px;display:grid;place-items:center;top:11px}
+.info small{display:block;margin-top:16px;color:var(--pink-200);font-size:14px}
+
+/* sub pages */
+.page-hero{background:linear-gradient(135deg,var(--pink-100),var(--pink-200));padding-block:56px 60px}
+.page-hero h1{font-size:clamp(30px,4.5vw,48px);font-weight:900;margin-bottom:14px;letter-spacing:-.01em}
+.page-hero p{color:var(--plum-2);font-size:18px;max-width:720px}
+.crumbs{font-size:14px;font-weight:700;color:var(--muted);margin-bottom:18px;display:flex;flex-wrap:wrap;gap:6px}
+.crumbs a{color:var(--pink-600)}
+.crumbs a:hover{text-decoration:underline}
+.pd-hero{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+.pd-art{background:#fff;border-radius:32px;padding:30px;box-shadow:var(--shadow);position:relative}
+.pd-art svg{width:100%}
+.pd-art .tag{top:20px;left:20px;background:var(--pink-100)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin:24px 0 26px}
+.stat{background:#fff;border-radius:16px;padding:14px 16px}
+.stat b{display:block;font-size:20px;font-weight:900;color:var(--pink-600);font-variant-numeric:tabular-nums;line-height:1.25}
+.stat span{font-size:13px;font-weight:700;color:var(--muted)}
+.subnav{background:#fff;border-bottom:1px solid var(--pink-100);position:sticky;top:calc(env(safe-area-inset-top,0px) + 78px);z-index:40}
+.subnav .wrap{display:flex;gap:6px;overflow-x:auto;padding-top:10px;padding-bottom:10px}
+.subnav a{flex:none;padding:8px 14px;border-radius:999px;font-weight:800;font-size:14px;color:var(--plum-2)}
+.subnav a:hover{background:var(--pink-100);color:var(--pink-600)}
+.spec-wrap{display:grid;grid-template-columns:1fr 340px;gap:40px;align-items:start}
+.table-scroll{overflow-x:auto;border-radius:var(--radius);background:#fff;box-shadow:var(--shadow)}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th,td{text-align:left;padding:13px 20px;border-bottom:1px solid var(--pink-100);vertical-align:top}
+th{font-weight:700;color:var(--muted);width:46%}
+td{font-weight:800;color:var(--plum);font-variant-numeric:tabular-nums}
+tr:last-child th,tr:last-child td{border-bottom:0}
+tbody tr:nth-child(even){background:var(--pink-50)}
+table.cmp thead th{background:var(--pink-500);color:#fff;font-weight:900;width:auto}
+table.cmp th{width:auto}
+.side-card{background:linear-gradient(160deg,var(--plum),var(--plum-2));color:#fff;border-radius:var(--radius);padding:28px;position:sticky;top:160px}
+.side-card h3{color:#fff;font-size:20px;margin-bottom:10px}
+.side-card p{color:var(--pink-100);font-size:15px;margin-bottom:18px}
+.side-card .btn{width:100%;margin-bottom:10px}
+.spec-note{font-size:14px;color:var(--muted);margin-top:16px}
+.feat{background:#fff;border-radius:var(--radius);padding:26px;border:2px solid var(--pink-100)}
+.feat .n{font-size:13px;font-weight:900;letter-spacing:.12em;color:var(--pink-400);margin-bottom:8px}
+.feat h3{font-size:18px;margin-bottom:6px}
+.feat p{color:var(--muted);font-size:15px}
+.swatches{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+.sw{display:flex;align-items:center;gap:8px;background:#fff;border-radius:999px;padding:6px 14px 6px 6px;font-weight:800;font-size:14px;border:2px solid var(--pink-100)}
+.sw i{width:26px;height:26px;border-radius:50%;display:block;border:2px solid #fff;box-shadow:0 0 0 1px var(--pink-200)}
+.pill-list{display:flex;flex-wrap:wrap;gap:10px}
+.pill{background:#fff;border:2px solid var(--pink-100);border-radius:999px;padding:9px 16px;font-weight:800;font-size:14px;color:var(--plum-2)}
+.cta-band{background:linear-gradient(120deg,var(--pink-500),var(--pink-400));color:#fff;border-radius:32px;padding:48px;display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap}
+.cta-band h2{color:#fff;margin-bottom:6px}
+.cta-band p{color:var(--pink-50);max-width:560px}
+.prose{max-width:760px;margin:0 auto;font-size:17px}
+.prose h2{font-size:26px;margin:38px 0 12px}
+.prose h3{font-size:20px;margin:26px 0 8px}
+.prose p{margin-bottom:16px;color:var(--text)}
+.prose ul,.prose ol{margin:0 0 18px 22px}
+.prose li{margin-bottom:6px}
+.prose .callout{background:#fff;border-radius:18px;padding:20px 24px;border:2px solid var(--pink-200);margin:24px 0}
+.meta{font-size:14px;font-weight:800;color:var(--pink-600);margin-bottom:10px;letter-spacing:.06em;text-transform:uppercase}
+.filter{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:30px;justify-content:center}
+.filter button{border:2px solid var(--pink-200);background:#fff;border-radius:999px;padding:9px 18px;font-weight:800;color:var(--plum-2);cursor:pointer;font-size:14px}
+.filter button.on{background:var(--pink-500);border-color:var(--pink-500);color:#fff}
+.att-card{background:#fff;border-radius:18px;padding:20px;border:2px solid var(--pink-100)}
+.att-card small{font-size:11px;font-weight:900;letter-spacing:.1em;color:var(--pink-400);text-transform:uppercase}
+.att-card b{display:block;font-size:17px;color:var(--plum);margin:4px 0}
+.att-card span{font-size:14px;color:var(--muted)}
+.pdi-group{background:#fff;border-radius:var(--radius);padding:28px;box-shadow:var(--shadow)}
+.pdi-group h3{font-size:19px;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.pdi-group h3 i{font-style:normal;background:var(--pink-100);color:var(--pink-600);border-radius:999px;padding:2px 10px;font-size:13px}
+.pdi-group ol{list-style:none;counter-reset:c}
+.pdi-group li{display:flex;gap:10px;align-items:flex-start;padding:7px 0;border-bottom:1px dashed var(--pink-100);font-size:15px}
+.pdi-group li:last-child{border-bottom:0}
+.pdi-group li b{flex:none;width:30px;font-variant-numeric:tabular-nums;color:var(--pink-500)}
+
+/* form */
+.form-wrap{display:grid;grid-template-columns:1.4fr 1fr;gap:40px;align-items:start}
+form.card{background:#fff;border-radius:var(--radius);padding:34px;box-shadow:var(--shadow)}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field.full{grid-column:1/-1}
+.field label{font-weight:800;font-size:14px;color:var(--plum)}
+.field label em{color:var(--pink-500);font-style:normal}
+.field input,.field select,.field textarea{border:2px solid var(--pink-100);background:var(--pink-50);border-radius:14px;padding:12px 14px;font-size:15px;color:var(--text);width:100%}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--pink-400);background:#fff}
+.field textarea{min-height:140px;resize:vertical}
+.form-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.form-msg{margin-top:14px;font-weight:700;font-size:14px;color:var(--pink-700)}
+.contact-list{display:grid;gap:14px}
+.contact-item{background:#fff;border-radius:18px;padding:20px;border:2px solid var(--pink-100);display:flex;gap:14px;align-items:center}
+.contact-item .ico{width:46px;height:46px;border-radius:50%;background:var(--pink-100);display:grid;place-items:center;color:var(--pink-600);flex:none}
+.contact-item .ico svg{width:22px;height:22px}
+.contact-item b{display:block;color:var(--plum)}
+.contact-item span{font-size:14px;color:var(--muted);word-break:break-word}
+
+footer{background:var(--plum);color:var(--pink-200);padding:60px 0 30px;font-size:15px}
+.foot{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:30px;margin-bottom:40px}
+footer h4{color:#fff;font-size:16px;margin-bottom:14px}
+footer ul{list-style:none}
+footer li{padding:4px 0}
+footer a:hover{color:#fff}
+footer .logo-text b{color:#fff}
+.copy{border-top:1px solid rgba(255,255,255,.12);padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:13px}
+.copy a{margin-left:14px}
+.wa-float{position:fixed;right:22px;bottom:calc(22px + env(safe-area-inset-bottom,0px));width:60px;height:60px;border-radius:50%;background:var(--pink-500);color:#fff;display:grid;place-items:center;box-shadow:0 8px 24px rgba(240,70,138,.45);z-index:60;transition:.2s}
+.wa-float svg{width:30px;height:30px}
+.wa-float:hover{transform:scale(1.08)}
+.ico-inline{width:18px;height:18px;flex:none}
+
+/* love popups */
+.love{position:fixed;inset:0;z-index:200;display:grid;place-items:center;padding:20px;background:rgba(74,21,53,.55);backdrop-filter:blur(6px);animation:loveFade .5s ease both;cursor:pointer}
+.love.out{animation:loveOut .6s ease both}
+.love-card{position:relative;width:min(92vw,820px);background:radial-gradient(circle at 20% 15%,#fff 0,transparent 45%),linear-gradient(145deg,var(--pink-200),var(--pink-400) 55%,var(--pink-500));border-radius:48px;padding:clamp(40px,8vw,90px) clamp(24px,5vw,60px);text-align:center;color:#fff;box-shadow:0 30px 80px rgba(212,42,112,.55),inset 0 0 0 6px rgba(255,255,255,.5);animation:lovePop .7s cubic-bezier(.2,1.6,.4,1) both;overflow:hidden}
+.love-card h2{color:#fff;font-size:clamp(40px,10vw,108px);font-weight:900;line-height:1;letter-spacing:-.02em;text-shadow:0 6px 0 var(--pink-700),0 12px 30px rgba(74,21,53,.35);margin:0}
+.love-card h2 .big-heart{display:inline-block;animation:beat 1s ease-in-out infinite;color:#fff}
+.love-card p{margin-top:22px;font-size:clamp(20px,4vw,34px);font-weight:900;color:var(--plum);background:#fff;display:inline-block;padding:8px 26px;border-radius:999px}
+.love-card .hearts span{position:absolute;bottom:-40px;font-size:30px;color:#fff;opacity:.85;animation:rise 4s linear infinite}
+.love-card small{display:block;margin-top:20px;font-weight:800;color:#fff;opacity:.85;font-size:14px}
+@keyframes loveFade{from{opacity:0}}
+@keyframes loveOut{to{opacity:0;transform:scale(1.05)}}
+@keyframes lovePop{from{transform:scale(.3) rotate(-8deg);opacity:0}}
+@keyframes beat{0%,100%{transform:scale(1)}30%{transform:scale(1.25)}60%{transform:scale(.95)}}
+@keyframes rise{to{transform:translateY(-640px) rotate(25deg);opacity:0}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+@media (max-width:1100px){
+  nav{display:none}
+  nav.open{display:block;position:absolute;top:78px;left:0;right:0;background:#fff;padding:20px;border-bottom:1px solid var(--pink-100);max-height:calc(100vh - 78px);overflow:auto}
+  nav.open ul{flex-direction:column;gap:14px;align-items:flex-start}
+  .dd{position:static;display:flex;box-shadow:none;border:0;margin-top:6px;padding:0 0 0 10px;min-width:0}
+  .dd::before{display:none}
+  .menu-btn{display:inline-block}
+}
+@media (max-width:1000px){
+  .hero .wrap,.pdi,.quote .wrap,.dealer,.attach-wrap,.pd-hero,.spec-wrap,.form-wrap{grid-template-columns:1fr}
+  .grid-4,.grid-3{grid-template-columns:repeat(2,1fr)}
+  .apps{grid-template-columns:1fr}
+  .strip .wrap{grid-template-columns:repeat(4,1fr)}
+  .strip a:nth-child(4){border-right:0}
+  .foot{grid-template-columns:1fr 1fr}
+  .dealer{padding:40px 28px}
+  .side-card{position:static}
+}
+@media (max-width:620px){
+  .wrap{padding-inline:16px}
+  .section{padding-block:64px}
+  .section.tight{padding-top:0}
+  .grid-4,.grid-3,.grid-2,.att-grid,.dealer-list,.foot,.fgrid{grid-template-columns:1fr}
+  .strip .wrap{grid-template-columns:repeat(2,1fr)}
+  .strip a:nth-child(2n){border-right:0}
+  .topbar span{display:none}
+  .header-cta .btn{display:none}
+  .hero .wrap{padding-top:50px;padding-bottom:60px}
+  th,td{padding:11px 14px}
+  th{width:50%}
+  form.card{padding:22px}
+  .cta-band{padding:32px 24px}
+}
+</style>
+</head>
+<body>
+
+<!-- illustrations -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="excavator" viewBox="0 0 300 220">
+      <rect x="40" y="170" width="170" height="34" rx="17" fill="#6b2450"/>
+      <circle cx="60" cy="187" r="11" fill="#ffc9de"/><circle cx="95" cy="187" r="8" fill="#ffc9de"/><circle cx="125" cy="187" r="8" fill="#ffc9de"/><circle cx="155" cy="187" r="8" fill="#ffc9de"/><circle cx="190" cy="187" r="11" fill="#ffc9de"/>
+      <rect x="60" y="150" width="130" height="24" rx="8" fill="#a91d57"/>
+      <rect x="55" y="100" width="120" height="55" rx="16" fill="#f0468a"/>
+      <rect x="70" y="52" width="68" height="62" rx="14" fill="#ff6fa6"/>
+      <rect x="80" y="62" width="48" height="36" rx="8" fill="#e9d8ff" opacity=".9"/>
+      <circle cx="96" cy="80" r="3" fill="#4a1535"/><circle cx="112" cy="80" r="3" fill="#4a1535"/>
+      <path d="M97 88 q7 6 14 0" stroke="#4a1535" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <circle cx="88" cy="88" r="4" fill="#ff9fc4"/><circle cx="120" cy="88" r="4" fill="#ff9fc4"/>
+      <path d="M170 118 L225 55 L240 62 L190 130 Z" fill="#d42a70"/>
+      <path d="M225 55 L262 110 L250 118 L218 70 Z" fill="#f0468a"/>
+      <path d="M250 112 q30 10 18 45 q-22 -4 -34 -22 Z" fill="#a91d57"/>
+      <circle cx="225" cy="58" r="7" fill="#ffc9de"/><circle cx="182" cy="122" r="7" fill="#ffc9de"/>
+      <path d="M150 100 l10 -22 l6 3 l-8 20z" fill="#4a1535"/>
+    </symbol>
+    <symbol id="skid" viewBox="0 0 300 220">
+      <circle cx="90" cy="172" r="30" fill="#6b2450"/><circle cx="90" cy="172" r="13" fill="#ffc9de"/>
+      <circle cx="190" cy="172" r="30" fill="#6b2450"/><circle cx="190" cy="172" r="13" fill="#ffc9de"/>
+      <rect x="55" y="105" width="170" height="60" rx="18" fill="#f0468a"/>
+      <rect x="95" y="45" width="85" height="75" rx="16" fill="#ff6fa6"/>
+      <rect x="105" y="55" width="65" height="48" rx="10" fill="#e9d8ff" opacity=".9"/>
+      <circle cx="127" cy="77" r="3" fill="#4a1535"/><circle cx="148" cy="77" r="3" fill="#4a1535"/>
+      <path d="M130 86 q8 6 15 0" stroke="#4a1535" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <circle cx="118" cy="86" r="4" fill="#ff9fc4"/><circle cx="157" cy="86" r="4" fill="#ff9fc4"/>
+      <path d="M180 70 L240 95 L236 108 L178 90 Z" fill="#d42a70"/>
+      <path d="M232 92 L285 110 L278 170 L238 170 Z" fill="#a91d57"/>
+      <circle cx="182" cy="80" r="7" fill="#ffc9de"/>
+    </symbol>
+    <symbol id="tracked" viewBox="0 0 300 220">
+      <rect x="45" y="150" width="190" height="48" rx="24" fill="#6b2450"/>
+      <circle cx="70" cy="174" r="14" fill="#ffc9de"/><circle cx="210" cy="174" r="14" fill="#ffc9de"/>
+      <circle cx="115" cy="174" r="8" fill="#ffc9de"/><circle cx="165" cy="174" r="8" fill="#ffc9de"/>
+      <rect x="55" y="98" width="170" height="58" rx="18" fill="#f0468a"/>
+      <rect x="95" y="40" width="85" height="75" rx="16" fill="#ff6fa6"/>
+      <rect x="105" y="50" width="65" height="48" rx="10" fill="#e9d8ff" opacity=".9"/>
+      <circle cx="127" cy="72" r="3" fill="#4a1535"/><circle cx="148" cy="72" r="3" fill="#4a1535"/>
+      <path d="M130 81 q8 6 15 0" stroke="#4a1535" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <circle cx="118" cy="81" r="4" fill="#ff9fc4"/><circle cx="157" cy="81" r="4" fill="#ff9fc4"/>
+      <path d="M180 65 L240 90 L236 103 L178 85 Z" fill="#d42a70"/>
+      <path d="M232 87 L285 105 L278 165 L238 165 Z" fill="#a91d57"/>
+      <circle cx="182" cy="75" r="7" fill="#ffc9de"/>
+    </symbol>
+    <symbol id="mower" viewBox="0 0 300 220">
+      <rect x="40" y="150" width="220" height="44" rx="22" fill="#6b2450"/>
+      <circle cx="65" cy="172" r="12" fill="#ffc9de"/><circle cx="235" cy="172" r="12" fill="#ffc9de"/>
+      <circle cx="110" cy="172" r="7" fill="#ffc9de"/><circle cx="150" cy="172" r="7" fill="#ffc9de"/><circle cx="190" cy="172" r="7" fill="#ffc9de"/>
+      <rect x="55" y="95" width="190" height="60" rx="20" fill="#f0468a"/>
+      <rect x="75" y="80" width="150" height="26" rx="13" fill="#ff6fa6"/>
+      <circle cx="130" cy="125" r="4" fill="#4a1535"/><circle cx="170" cy="125" r="4" fill="#4a1535"/>
+      <path d="M140 134 q10 8 20 0" stroke="#4a1535" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <circle cx="118" cy="135" r="5" fill="#ff9fc4"/><circle cx="182" cy="135" r="5" fill="#ff9fc4"/>
+      <line x1="210" y1="80" x2="222" y2="40" stroke="#4a1535" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="223" cy="36" r="7" fill="#ff9fc4"/>
+      <path d="M40 200 q10 -14 18 0 q10 -14 18 0 q10 -14 18 0 q10 -14 18 0 q10 -14 18 0 q10 -14 18 0 q10 -14 18 0 q10 -14 18 0 q10 -14 18 0 q10 -14 18 0 q10 -14 18 0 q10 -14 18 0" stroke="#a91d57" stroke-width="3" fill="none" opacity=".45"/>
+    </symbol>
+    <symbol id="attach" viewBox="0 0 300 220">
+      <path d="M40 70 h110 q30 0 30 30 v40 q-40 50 -140 30 z" fill="#f0468a"/>
+      <path d="M40 170 l12 18 l14 -16 l14 18 l14 -18 l14 18 l14 -18 l14 16 l14 -20" stroke="#a91d57" stroke-width="8" fill="none" stroke-linejoin="round"/>
+      <circle cx="90" cy="105" r="4" fill="#4a1535"/><circle cx="120" cy="105" r="4" fill="#4a1535"/>
+      <path d="M98 115 q7 6 14 0" stroke="#4a1535" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <rect x="205" y="30" width="30" height="40" rx="8" fill="#d42a70"/>
+      <rect x="214" y="68" width="12" height="120" fill="#a91d57"/>
+      <path d="M200 90 l40 -10 M200 115 l40 -10 M200 140 l40 -10 M204 165 l32 -8" stroke="#ff6fa6" stroke-width="10" stroke-linecap="round"/>
+      <path d="M214 188 l6 20 l6 -20z" fill="#6b2450"/>
+    </symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.3-.3-.3-.5-.4Z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M3 5h18v14H3z M3 6l9 7 9-7"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M12 21s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12Z"/><circle cx="12" cy="9" r="2.5" fill="currentColor"/></symbol>
+    <symbol id="i-store" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M4 9l1.5-5h13L20 9M4 9v11h16V9M4 9h16M9 20v-6h6v6"/></symbol>
+    <symbol id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="15" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M11 12l9-9M17 6l3 3M15 8l2 2"/></symbol>
+    <symbol id="i-hat" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M3 18h18M5 18v-3a7 7 0 0 1 14 0v3M10 8V5h4v3"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path fill="none" stroke="currentColor" stroke-width="2" d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></symbol>
+  </defs>
+</svg>
+
+<div class="topbar">
+  <div class="wrap">
+    <div>Compact construction machinery for overseas buyers</div>
+    <span><a href="#/about">OEM support</a><a href="#/attachments">Spare-parts planning</a><a href="#/quote">Export assistance</a></span>
+  </div>
+</div>
+
+<header>
+  <div class="wrap">
+    <a href="#/" class="logo" aria-label="AVA's Cute Machinery home">
+      <svg class="logo-mark" viewBox="0 0 48 48" aria-hidden="true">
+        <circle cx="24" cy="24" r="23" fill="#ffe4ef"/>
+        <g fill="#f0468a">
+          <rect x="21" y="3" width="6" height="8" rx="2"/><rect x="21" y="37" width="6" height="8" rx="2"/>
+          <rect x="3" y="21" width="8" height="6" rx="2"/><rect x="37" y="21" width="8" height="6" rx="2"/>
+          <rect x="8" y="8" width="7" height="6" rx="2" transform="rotate(45 11.5 11)"/><rect x="33" y="34" width="7" height="6" rx="2" transform="rotate(45 36.5 37)"/>
+          <rect x="33" y="8" width="7" height="6" rx="2" transform="rotate(-45 36.5 11)"/><rect x="8" y="34" width="7" height="6" rx="2" transform="rotate(-45 11.5 37)"/>
+        </g>
+        <circle cx="24" cy="24" r="13" fill="#f0468a"/>
+        <path d="M24 30 c-6 -4 -8 -7 -8 -9.5 a3.8 3.8 0 0 1 8 -1.5 a3.8 3.8 0 0 1 8 1.5 c0 2.5 -2 5.5 -8 9.5z" fill="#fff"/>
+      </svg>
+      <div class="logo-text"><b>AVA's</b><small>Cute Machinery</small></div>
+    </a>
+    <nav id="nav">
+      <ul>
+        <li><a href="#/" data-nav="home">Home</a></li>
+        <li class="has-dd">
+          <a href="#/products" class="dd-toggle" data-nav="products">Products <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="dd">
+            <a href="#/category/mini-excavators">Mini Excavators</a>
+            <a href="#/category/skid-steer-loaders">Skid Steer Loaders</a>
+            <a href="#/category/remote-control-mowers">Remote Control Mowers</a>
+            <a href="#/attachments">Attachments</a>
+          </div>
+        </li>
+        <li><a href="#/applications" data-nav="applications">Applications</a></li>
+        <li><a href="#/about" data-nav="about">About AVA's</a></li>
+        <li><a href="#/news" data-nav="news">News</a></li>
+        <li><a href="#/quote" data-nav="quote">Request a Quote</a></li>
+      </ul>
+    </nav>
+    <div class="header-cta">
+      <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
+      <a href="#/quote" class="btn btn-primary">Send Inquiry</a>
+    </div>
+  </div>
+</header>
+
+<main id="app"></main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <div class="logo" style="margin-bottom:14px"><div class="logo-text"><b>AVA's</b><small>Cute Machinery</small></div></div>
+        <p>Compact construction machinery for dealers, contractors and farms worldwide — built tough, painted pretty.</p>
+      </div>
+      <div><h4>Products</h4><ul>
+        <li><a href="#/category/mini-excavators">Mini Excavators</a></li>
+        <li><a href="#/category/skid-steer-loaders">Skid Steer Loaders</a></li>
+        <li><a href="#/category/remote-control-mowers">Remote Control Mowers</a></li>
+        <li><a href="#/attachments">Attachments</a></li></ul></div>
+      <div><h4>Support</h4><ul>
+        <li><a href="#/about">About AVA's</a></li>
+        <li><a href="#/pre-shipment-inspection">Pre-Shipment Inspection</a></li>
+        <li><a href="#/news">Buyer Guides</a></li>
+        <li><a href="#/applications">Applications</a></li></ul></div>
+      <div><h4>Contact</h4><ul>
+        <li><a data-mail href="#">E-mail us</a></li>
+        <li><a data-wa href="#">WhatsApp</a></li>
+        <li><a href="#/quote">Request a Quote</a></li></ul></div>
+    </div>
+    <div class="copy"><span>© 2026 AVA's Cute Machinery. All rights reserved.</span>
+      <span><a href="#/privacy-policy">Privacy</a><a href="#/terms-conditions">Terms</a><a href="#/cookie-policy">Cookies</a></span></div>
+  </div>
+</footer>
+
+<a data-wa href="#" class="wa-float" aria-label="Chat on WhatsApp"><svg><use href="#i-wa"/></svg></a>
+
+<!--
+  PRODUCT DATA
+  Format:  #slug|Name|Short description|stat value~stat label;...
+           spec name=value;spec name=value;...
+           CMP:row label~col1~col2;...   (optional comparison table, first row = header)
+-->
+<script type="text/plain" id="product-data">
+#t10-1|T10-1 1 Ton Mini Excavator|A compact 1 ton crawler excavator for landscaping, farm trenching, garden work and narrow job sites.|1.0 Ton~Operating weight;0.025 m³~Bucket capacity;1600 mm~Max digging depth;940 mm~Machine width
+Engine model=KOOP192 / B&G XR13.5;Emission option=EURO 5 / EPA;Power=7.6 kW / 13.5 HP;Rated speed=3000 rpm;Track model=180×72×37;Bucket capacity=0.025 m³;Overall size L×W×H=2800×940×2200 mm;Canopy height=2250 mm;Minimum length=2400 mm;Min. ground clearance=90 mm;Max. digging height=2550 mm;Max. dumping height=1750 mm;Max. digging depth=1600 mm;Max. digging radius=3050 mm
+#t10-pro|T10-PRO Lithium Battery Mini Excavator|A battery-powered mini excavator with a 72V 150Ah lithium pack for quiet, zero-emission digging in gardens, greenhouses and indoor spaces.|72V 150Ah~Lithium battery;0.04 m³~Bucket capacity;2100 mm~Max digging depth;200 mm~Track shoe width
+Model=T10-PRO Lithium;Battery type=Lithium battery;Battery voltage=72 V;Battery capacity=150 Ah;Bucket capacity=0.04 m³;Max. digging height=2800 mm;Max. dumping height=1850 mm;Max. digging depth=2100 mm;Max. digging radius=3550 mm;Overall length=3210 mm;Overall width=950 / 1200 mm;Overall height to boom=1340 mm;Min. ground clearance=150 mm;Standard track shoe width=200 mm
+#t12|T12 1.2 Ton Mini Excavator|A 1.2 ton class crawler excavator with optional hydraulic pilot joystick for landscaping, farm use and backyard projects.|1.2 Ton~Weight class;0.025 m³~Bucket capacity;1750 mm~Max digging depth;EURO 5 / EPA 4~Emission option
+Model=T12 Hydraulic Pilot Joystick;Engine=KD192FC-1 / Briggs & Stratton;Power / rpm=7 kW (3000) / 10.07 kW (3600);Emission=EURO 5 / EPA 4;Bucket capacity=0.025 m³;Max. digging height=2600 mm;Max. dumping height=1750 mm;Max. digging depth=1750 mm;Ground length=1220 mm;Operating weight=1000 kg (standard configuration);Wooden box size=3000×1150×1660 mm;Box size with cabin=2550×1150×2350 mm
+#t13pro|T13PRO 1.3 Ton Mini Excavator|A 1.3 ton class crawler excavator with hydraulic pilot joystick control and three engine choices, including Kubota.|1.3 Ton~Weight class;0.025 m³~Bucket capacity;1750 mm~Max digging depth;3~Engine options
+Model=T13PRO Hydraulic Pilot Joystick;Engine=KD192FC-1 / Briggs & Stratton / Kubota D722;Power / rpm=7 kW (3000) / 10.07 kW (3600) / 10.2 kW (2400);Emission=EURO 5 / EPA 4;Bucket capacity=0.025 m³;Max. digging height=2600 mm;Max. dumping height=1750 mm;Max. digging depth=1750 mm;Ground length=1440 mm;Operating weight=1100 kg (standard configuration);Wooden box size=2600×1030×1650 mm;Box size with cabin=Confirm before order
+#t15|T15 1.5 Ton Mini Excavator|A 1.5 ton crawler excavator with Laidong or Yanmar diesel power for farms, landscaping and small construction work.|1.5 Ton~Weight class;0.025 m³~Bucket capacity;1800 mm~Max digging depth;3150 mm~Max digging radius
+Model=T15;Engine=Laidong 385 / Yanmar 3TNV74F;Power / rpm=18.8 kW (2400) / 11.2 kW (2400);Emission=EURO 5 / EPA 4 option;Bucket capacity=0.025 m³;Max. digging height=2650 mm;Max. dumping height=1800 mm;Max. digging depth=1800 mm;Max. digging radius=3150 mm;Machine size L×W×H=3100×1100×2300 mm;Height with cabin=2350 mm;Minimum length=2450 mm;Min. ground clearance=140 mm;Track type=180×72×41
+#t18|T18 Series Mini Excavator|A compact crawler excavator with boom swing, hydraulic pilot control, breaker pipeline and a choice of three diesel engines.|1400 kg~Operating weight;0.04 m³~Bucket capacity;2100 mm~Max digging depth;200 mm~Rubber tracks
+Model=T18;Engine models=Laidong 385 / Kubota D722 / Kubota D902;Emission standard=EPA / Euro 5;Operation=Hydraulic pilot control;Bucket capacity=0.04 m³;Max. digging height=2800 mm;Max. dumping height=1850 mm;Max. digging depth=2100 mm;Ground length=1440 mm;Operating weight=1400 kg;Rubber track width=200 mm;Standard wooden box=3350×1220×1750 mm;Cabin wooden box=2650×1220×2450 mm;Configuration=Canopy or cabin
+#t20|T20 2 Ton Mini Excavator|A 2 ton class crawler excavator with Kubota or Yanmar power for bigger trenching and earthmoving jobs.|2 Ton~Weight class;0.04 m³~Bucket capacity;2200 mm~Max digging depth;3650 mm~Max digging radius
+Model=T20;Engine=Kubota D902 / Yanmar 374F;Power / rpm=11.8 kW / 11.2 kW (2400);Rated working flow=27.6 / 28.8 L/min;Bucket capacity=0.04 m³;Max. digging height=2900 mm;Max. dumping height=1950 mm;Max. digging depth=2200 mm;Max. digging radius=3650 mm;Overall length=3350 mm;Overall width=1020 / 1270 mm;Overall height to boom=1290 mm;Min. ground clearance=150 mm;Standard track shoe width=230 mm
+#gw16|GW16 1.5 Ton Compact Excavator|A premium 1.5 ton crawler excavator with Kubota D902 engine, variable piston pump and load-sensing valve.|1500 kg~Machine weight;0.04 m³~Bucket capacity;2200 mm~Max digging depth;2.2–4.3 km/h~Travel speed
+Model=GW16;Engine=Kubota D902;Engine type=Three-cylinder direct injection;Displacement=0.898 L;Rated power=11.8 kW / 2300 rpm;Compliance / emission=CE / EURO 5;Hydraulic pump=Variable piston pump;Hydraulic valve=Load-sensitive valve;Machine weight=1500 kg;Bucket capacity=0.04 m³;Arm digging force=9.5 kN;Bucket digging force=16 kN;Max. digging height=2900 mm;Max. dumping height=1950 mm;Max. digging depth=2200 mm;Max. digging radius on ground=3650 mm;Travel speed=2.2–4.3 km/h;Traction force=18 kN;Gradability=30°;Max. rotation speed=9.5 r/min;Overall length=3350 mm;Overall width=1020 / 1270 mm;Ground length=1510 mm;Wooden box size=3550×1150×1870 mm;Box size with cabin=2850×1150×2500 mm
+#gw18|GW18 1.8 Ton Mini Excavator|A premium 1.8 ton crawler excavator with Kubota engine, piston pump and load-sensing valve for contractors and rental fleets.|1800 kg~Machine weight;0.04 m³~Bucket capacity;2270 mm~Max digging depth;2.2 / 4.5 km/h~Travel speed
+Model=GW18;Engine=Kubota D902-E4B-CBH-1;Engine type=Three-cylinder direct injection;Displacement=0.898 L;Rated power=11.8 kW / 2300 rpm;Compliance / emission=EURO 5 / EPA 4;Hydraulic pump=Piston pump;Hydraulic valve=Load-sensitive valve;Machine weight=1800 kg;Bucket capacity=0.04 m³;Arm digging force=9.5 kN;Bucket digging force=16 kN;Max. digging height=3570 mm;Max. dumping height=2480 mm;Max. digging depth=2270 mm;Max. digging radius on ground=3840 mm;Travel speed=2.2 / 4.5 km/h;Traction force=18 kN;Gradability=30°;Max. rotation speed=9.5 r/min;Overall length=3600 mm;Overall width=990 / 1300 mm;Ground length=1595 mm;Wooden box size=3700×1100×1850 mm;Box size with cabin=3400×1100×2450 mm
+#gw25|GW25 2.2 Ton Side Swing Excavator|A 2.2 ton crawler excavator with side swing boom, telescopic arm and Yanmar engine for narrow, demanding job sites.|2200 kg~Machine weight;0.068 m³~Bucket capacity;2410 mm~Max digging depth;70 L/min~Hydraulic flow
+Model=GW25;Engine=Yanmar 3TNV80F;Engine type=Three-cylinder direct injection;Displacement=1.267 L;Rated power=15.2 kW / 2500 rpm;Compliance / emission=EURO 5 / EPA 4;Hydraulic pump=Variable piston pump;Hydraulic valve=Load-sensitive valve;Hydraulic pressure=24.5 MPa;Hydraulic flow=70 L/min;Travel motor=High / low speed piston motor;Swing motor=Piston motor;Machine weight=2200 kg;Bucket capacity=0.068 m³;Arm digging force=13.5 kN;Bucket digging force=20 kN;Max. digging height=4190 mm;Max. dumping height=2880 mm;Max. digging depth=2410 mm;Max. digging radius on ground=4520 mm;Side swing angle=50° right / 65° left;Track model=Rubber track 250×48×82;Travel speed=2.0 / 3.8 km/h;Traction force=23 kN;Gradability=30°;Max. rotation speed=9.5 r/min;Overall length=4100 mm;Overall width=1300 / 1500 mm;Ground length=1860 mm;Wooden box size=3950×1420×1850 mm;Box size with cabin=4000×1420×2500 mm
+#gw30|GW30 2.8 Ton Telescopic Compact Excavator|A heavy-duty 2.8 ton crawler excavator with side swing, telescopic arm and Yanmar 3TNV80F engine.|2780 kg~Machine weight;0.068 m³~Bucket capacity;2590 mm~Max digging depth;4370 mm~Max digging height
+Model=GW30;Engine=Yanmar 3TNV80F;Engine type=Three-cylinder direct injection;Displacement=1.267 L;Rated power=15.2 kW / 2500 rpm;Compliance / emission=CE / EURO 5 / EPA 4;Hydraulic pump=Variable piston pump;Hydraulic valve=Full hydraulic load-sensitive valve;Hydraulic pressure=24.5 MPa;Hydraulic flow=70 L/min;Travel motor=High / low speed piston motor;Swing motor=Piston motor;Machine weight=2780 kg;Bucket capacity=0.068 m³;Arm digging force=13.5 kN;Bucket digging force=20 kN;Auxiliary counterweight=200 kg (standard);Max. digging height=4370 mm;Max. dumping height=3060 mm;Max. digging depth=2590 mm;Max. digging radius on ground=4640 mm;Side swing angle=50° right / 65° left;Track model=Rubber track 300×52.5×80;Travel speed=2.0 / 3.5 km/h;Traction force=23 kN;Gradability=30°;Max. rotation speed=9.5 r/min;Overall length=4100 mm;Overall width=1370 / 1570 mm;Ground length=1960 mm;Wooden box size=4150×1470×1950 mm;Box size with cabin=4200×1470×2550 mm
+#s360|S360 Mini Skid Steer Loader|A compact, easy-to-drive wheel loader for landscaping, backyard access, material handling and rental fleets on firm ground.|900 kg~Operating weight;200 kg~Rated load;0.12 m³~Bucket capacity;0–6 km/h~Travel speed
+Model=S360;Operating weight=900 kg;Bucket capacity=0.12 m³;Climbing ability=25°;Max. breakout force=3.5 kN;Rated load=200 kg;Maximum load=300 kg;Travel speed=0–6 km/h;Bucket width=1050 mm;Max. loading height=1720 mm;Max. dumping height=1510 mm;Max. operating height=2400 mm;Height to bucket pin=1870 mm;Dump angle at max. height=63°;Ground clearance=130 mm;Dumping distance=250 mm;Overall dimensions=2070×1050×1300 mm;Length excl. bucket=1640 mm;Wheelbase=750 mm;Tire model=18×8.5-8;Working system pressure=17–21 bar;CE documentation=Available;Euro 5 / EPA option=Depends on engine selection
+#t360|T360 Tracked Mini Skid Steer Loader|A compact rubber-track loader for muddy ground, farm maintenance, landscaping and sites where traction matters.|900 kg~Operating weight;200 kg~Rated load;900 mm~Track contact;0–6 km/h~Travel speed
+Model=T360;Operating weight=900 kg;Bucket capacity=0.12 m³;Climbing ability=25°;Max. breakout force=3.5 kN;Rated load=200 kg;Maximum load=300 kg;Travel speed=0–6 km/h;Working cycle=9 s;Bucket width=1050 mm;Max. loading height=1720 mm;Max. dumping height=1510 mm;Max. operating height=2400 mm;Height to bucket pin=1870 mm;Dump angle at max. height=63°;Min. machine height=1300 mm;Tail length=500 mm;Ground clearance=130 mm;Dumping distance=250 mm;Overall dimensions=2070×1050×1300 mm;Length excl. bucket=1640 mm;Track contact length=900 mm;Track model=180×72×35;Working system pressure=17–21 bar;Power options=Lithium electric / KOOP 192F / Rato R420 / B&S XR13.5;Rated power options=6 kW (72V 125Ah) / 7.5 / 8.6 / 9.9 kW;Fuel tank=5 L (combustion engines);CE documentation=Available
+#s390|S390 Ride-On Mini Skid Steer Loader|A 1050 kg ride-on wheel loader with 200 kg rated load for construction yards and material handling in narrow areas.|1050 kg~Operating weight;200 kg~Rated load;800 mm~Wheelbase;0–6 km/h~Travel speed
+Model=S390;Operating weight=1050 kg;Bucket capacity=0.12 m³;Climbing ability=25°;Max. breakout force=3.5 kN;Rated load=200 kg;Maximum load=300 kg;Travel speed=0–6 km/h;Working cycle=9 s;Bucket width=1050 mm;Max. loading height=1830 mm;Max. dumping height=1470 mm;Max. operating height=2620 mm;Height to bucket pin=2000 mm;Dump angle at max. height=63°;Min. machine height=1250 mm;Tail length=220 mm;Ground clearance=180 mm;Dumping distance=600 mm;Overall dimensions=2400×1050×1250 mm;Length excl. bucket=1900 mm;Wheelbase=800 mm;Tire model=23×8.5-12;Working system pressure=17 bar;Power options=Lithium electric / KOOP 192F / Rato R420 / B&S XR13.5;Rated power options=6 kW (72V 125Ah) / 7.5 / 8.6 / 9.9 kW;Emission standard=EPA / EURO 5 (per power option);Fuel tank=5 L (combustion engines)
+#t390|T390 Ride-On Mini Skid Steer Loader|A 1070 kg ride-on rubber-track loader with 200 kg rated load for construction and frequently changing work in narrow areas.|1070 kg~Operating weight;200 kg~Rated load;1300 mm~Track contact;226 mm~Ground clearance
+Model=T390;Operating weight=1070 kg;Bucket capacity=0.12 m³;Climbing ability=25°;Max. breakout force=3.5 kN;Rated load=200 kg;Maximum load=300 kg;Travel speed=0–6 km/h;Working cycle=9 s;Bucket width=1150 mm;Max. loading height=1830 mm;Max. dumping height=1471 mm;Max. operating height=2425 mm;Height to bucket pin=2000 mm;Dump angle at max. height=63°;Min. machine height=1250 mm;Tail length=220 mm;Ground clearance=226 mm;Dumping distance=526 mm;Overall dimensions=2244×1150×1280 mm;Length excl. bucket=1900 mm;Track contact length=1300 mm;Rubber track model=180×72×45;Working system pressure=17 bar;Power options=Lithium electric / KOOP 192F / Rato R420 / B&S XR13.5;Rated power options=6 kW (72V 125Ah) / 7.5 / 8.6 / 9.9 kW;Emission standard=EPA / EURO 5 (per power option);Fuel tank=5 L (combustion engines)
+#s460|S460 Mini Skid Steer Loader|A 1200 kg wheel mini skid steer with 300 kg rated load for construction loading, farm yards and contractor work on firm surfaces.|1200 kg~Operating weight;300 kg~Rated load;4.5 kN~Breakout force;0–6 km/h~Travel speed
+Model=S460;Operating weight=1200 kg;Bucket capacity=0.12 m³;Climbing ability=25°;Max. breakout force=4.5 kN;Rated load=300 kg;Maximum load=400 kg;Travel speed=0–6 km/h;Working cycle=9 s;Bucket width=1050 mm;Max. loading height=1720 mm;Max. dumping height=1510 mm;Max. operating height=2400 mm;Height to bucket pin=1870 mm;Dump angle at max. height=63°;Min. machine height=1300 mm;Tail length=500 mm;Ground clearance=110 mm;Dumping distance=250 mm;Overall dimensions=2140×1120×1300 mm;Length excl. bucket=1850 mm;Wheelbase=800 mm;Tire model=18×8.5-8;Working system pressure=17–21 bar;Power options=Lithium electric / KOOP 292F / Rato R740 / B&S Vanguard 23;Rated power options=8 kW (72V 200Ah) / 15 / 19.2 / 17 kW;Lift cylinders=2;Fuel tank=10 L (combustion engines);CE documentation=Available
+#t460|T460 Tracked Mini Skid Steer Loader|A 1200 kg rubber-track mini skid steer with 300 kg rated load for muddy farms, uneven sites and compact material handling.|1200 kg~Operating weight;300 kg~Rated load;4.5 kN~Breakout force;225 mm~Ground clearance
+Model=T460;Operating weight=1200 kg;Bucket capacity=0.12 m³;Climbing ability=25°;Max. breakout force=4.5 kN;Rated load=300 kg;Maximum load=400 kg;Travel speed=0–6 km/h;Working cycle=9 s;Bucket width=1050 mm;Max. loading height=1720 mm;Max. dumping height=1410 mm;Max. operating height=2400 mm;Height to bucket pin=1870 mm;Dump angle at max. height=63°;Min. machine height=1300 mm;Tail length=500 mm;Ground clearance=225 mm;Dumping distance=295 mm;Overall dimensions=2169×1120×1300 mm;Length excl. bucket=1850 mm;Track contact length=900 mm;Rubber track model=180×72×35;Working system pressure=17–21 bar;Optional hydraulic package=Three pumps, three valves, dual auxiliary outputs;Twin-cylinder engine options=Runtong / KOOP / Briggs & Stratton / Honda / Zongshen;Lift cylinders=2;Fuel tank=10 L (combustion engines);CE documentation=Available
+#s490|S490 Ride-On Mini Skid Steer Loader|A 1200 kg ride-on wheel loader with 250 kg rated load and five diesel/gasoline engine choices for yards and material handling.|1200 kg~Operating weight;250 kg~Rated load;925 mm~Wheelbase;10 L~Fuel tank
+Model=S490;Operating weight=1200 kg;Bucket capacity=0.12 m³;Climbing ability=25°;Max. breakout force=4.5 kN;Rated load=250 kg;Maximum load=350 kg;Travel speed=0–6 km/h;Working cycle=9 s;Bucket width=1050 mm;Max. loading height=1740 mm;Max. dumping height=1429 mm;Max. operating height=2574 mm;Height to bucket pin=1933 mm;Dump angle at max. height=63°;Min. machine height=1300 mm;Tail length=500 mm;Ground clearance=180 mm;Dumping distance=595 mm;Overall dimensions=2644×1089×1264 mm;Length excl. bucket=2300 mm;Wheelbase=925 mm;Tires=Pneumatic (solid optional);Working system pressure=17–21 bar;Optional hydraulic package=Three pumps, three valves, dual outputs;Engine options=Rato R740 / KOOP 292 / B&S Vanguard 23 / Yanmar 3TNV80F / Kubota D1105;Fuel tank=10 L
+#t490|T490 Ride-On Tracked Mini Skid Steer Loader|A 1200 kg ride-on tracked loader with 250 kg rated load for soft ground, construction yards and attachment work.|1200 kg~Operating weight;250 kg~Rated load;925 mm~Track base;4.5 kN~Breakout force
+Model=T490;Operating weight=1200 kg;Bucket capacity=0.12 m³;Climbing ability=25°;Max. breakout force=4.5 kN;Rated load=250 kg;Maximum load=350 kg;Travel speed=0–6 km/h;Working cycle=9 s;Bucket width=1050 mm;Max. loading height=1740 mm;Max. dumping height=1429 mm;Max. operating height=2574 mm;Height to bucket pin=1933 mm;Dump angle at max. height=63°;Min. machine height=1300 mm;Tail length=500 mm;Ground clearance=180 mm;Dumping distance=595 mm;Overall dimensions=2644×1089×1264 mm;Length excl. bucket=2300 mm;Track base=925 mm;Undercarriage=Rubber-track chassis;Working system pressure=17–21 bar;Optional hydraulic package=Three pumps, three valves, dual outputs;Engine options=Rato R740 / KOOP 292 / B&S Vanguard 23 / Yanmar 3TNV80F / Kubota D1105;Fuel tank=10 L
+#t750|T750 Tracked Mini Skid Steer Loader|A 1400 kg hydraulic-pilot tracked skid steer with 400 kg rated load for construction, farms and frequent attachment changes.|1400 kg~Operating weight;400 kg~Rated load;0.15 m³~Bucket capacity;25 bar~System pressure
+Model=T750;Operating weight=1400 kg;Bucket capacity=0.15 m³;Climbing ability=25°;Max. breakout force=4.5 kN;Rated load=400 kg;Maximum load=450 kg;Travel speed=0–6 km/h;Working cycle=9 s;Bucket width=1270 mm;Max. loading height=2140 mm;Max. dumping height=1700 mm;Max. operating height=2920 mm;Height to bucket pin=2300 mm;Dump angle at max. height=63°;Min. machine height=1550 mm;Tail length=500 mm;Ground clearance=240 mm;Dumping distance=150 mm;Overall dimensions=2700×1270×1550 mm;Length excl. bucket=2070 mm;Track contact length=1300 mm;Rubber track width=180 mm;Working system pressure=25 bar;Hydraulic pumps=Two piston pumps + one gear pump;Auxiliary hydraulics=Dual hydraulic outputs;Control system=Hydraulic pilot operation;Diesel engine options=Yanmar 3TNV80 / Kubota D1105 / Laidong 385;Electric option=14 kW, 72V 200Ah LiFePO4 battery;Additional options=Remote control, bucket self-leveling valve;Fuel tank=30 L (diesel)
+#s750|S750 Wheel Mini Skid Steer Loader|A 1400 kg hydraulic-pilot wheel skid steer with 400 kg rated load for construction yards, paved areas and farm lanes.|1400 kg~Operating weight;400 kg~Rated load;0.15 m³~Bucket capacity;860 mm~Wheelbase
+Model=S750;Operating weight=1400 kg;Bucket capacity=0.15 m³;Climbing ability=25°;Max. breakout force=4.5 kN;Rated load=400 kg;Maximum load=450 kg;Travel speed=0–6 km/h;Working cycle=9 s;Bucket width=1270 mm;Max. loading height=2140 mm;Max. dumping height=1700 mm;Max. operating height=2920 mm;Height to bucket pin=2300 mm;Dump angle at max. height=63°;Min. machine height=1550 mm;Tail length=500 mm;Ground clearance=240 mm;Dumping distance=150 mm;Overall dimensions=2700×1270×1550 mm;Length excl. bucket=2070 mm;Wheelbase=860 mm;Tires=Solid, 21×8-9;Working system pressure=25 bar;Hydraulic pumps=Two piston pumps + one gear pump;Auxiliary hydraulics=Dual hydraulic outputs;Control system=Hydraulic pilot operation;Diesel engine options=Yanmar 3TNV80 / Kubota D1105 / Laidong 385;Electric option=14 kW, 72V 200Ah LiFePO4 battery;Additional options=Remote control, bucket self-leveling valve;Fuel tank=30 L (diesel)
+#v1000|V1000 Compact Track Loader|A 500 kg rated-load tracked loader with dual pilot controls, closed-loop hydraulic drive and rubber or steel tracks.|1417 kg~Operating weight;500 kg~Rated load;0.19 m³~Bucket capacity;40 L~Fuel tank
+Operating weight=1417 kg;Bucket capacity=0.19 m³;Rated load=500 kg;Maximum load=650 kg;Breakout force=4.5 kN;Travel speed=0–5.5 km/h;Working pressure=19.5 MPa;Working cycle=9 s;Bucket width=1235 mm;Max. loading height=1740 mm;Max. dumping height=1522 mm;Max. operating height=2794 mm;Height to bucket pin=2140 mm;Ground clearance=200 mm;Dumping distance=498 mm;Climbing ability=25°;Overall dimensions=2691×1235×1548 mm;Length excl. bucket=1981 mm;Track contact length=1026 mm;Track model=230×72×45;Fuel tank=40 L;Engine options=Yanmar 3TNV80 / Kubota D1105 / Perkins 403D;Drive pump=Hansa closed-loop tandem pump;Work pump=Gear pump;Travel motors=Piston type;Track option=Rubber / steel
+#c1200|C1200 Compact Tracked Multi-Function Loader|A Kubota-powered tracked loader for tight spaces, tough terrain and multi-attachment work in construction and agriculture.|1310 kg~Operating weight;440 kg~Rated load;17.1 kW~Rated power;1664 mm~Track contact
+Engine model=Kubota D1105;Rated power=17.1 kW;Cylinders=3;Fuel type=Diesel;Intake=Natural aspiration;Emission options=EPA / Euro 5;Fuel tank=32 L;Working pressure=18.8 MPa;Operating weight=1310 kg;Rated load=440 kg;Maximum load=500 kg;Bucket capacity=0.15 m³;Max. breakout force=4.5 kN;Travel speed=0–6 km/h;Climbing ability=25°;Work cycle=9 s;Track specification=200×49×72;Ground clearance=203 mm;Track contact length=1664 mm;Bucket width=1045 mm;Overall dimensions=2867×1045×1499 mm;Length excl. bucket=2034 mm;Max. loading height=1980 mm;Max. dumping height=1704 mm;Max. operating height=2606 mm;Height to bucket pin=2155 mm;Dump angle=63°;Tail length=500 mm;Dumping distance=833 mm
+#sh-800dl|SH-800DL Remote Control Lawn Mower|An 800 mm tracked remote mower for slopes, orchards, roadsides, solar farms and hard-to-reach vegetation.|800 mm~Cutting width;20–180 mm~Cutting height;55°+~Max slope;70–100 m~Remote distance
+Model=SH-800DL;Product type=Tracked remote slope mower;Cutting width=800 mm;Cutting height=20–180 mm;Travel speed=0–6 km/h;Maximum slope=55°+;Remote distance=70–100 m;Track width=150 mm;Track length=1000 mm;Net weight=approx. 316 kg;Packing size=1470×1370×750 mm;Engine options=Loncin 608cc / 764cc / 803cc;Starting method=Electric start;Compliance=CE;Emission options=EPA / Euro 5 engines available
+#sh-550j|SH-550J Remote Control Flail Mower|A compact 550 mm tracked mower for grass, weeds and uneven terrain where a small working width is preferred.|550 mm~Cutting width;128 kg~Net weight;7C~Industrial remote;196–224cc~Engine range
+Model=SH-550J;Cutting width=550 mm;Packing size=980×980×610 mm;Net weight=approx. 128 kg;Packing weight=approx. 159 kg;Remote control=7C industrial remote control;Lifting system=Remote lifting;Motor type=Industrial-grade brushless motor;Throttle=Electronic throttle;Warning beacon=Included;Engine range=196cc / 223cc / 224cc vertical shaft
+#sh-600b|SH-600B Remote Controlled Flail Mower|A 600 mm tracked mower with wider coverage than compact models, for grass, weeds and uneven ground.|600 mm~Cutting width;102 kg~Net weight;100 mm~Track width;196–225cc~Engine range
+Model=SH-600B;Cutting width=600 mm;Machine size=1030×980×570 mm;Packing size=1080×1030×720 mm;Track width=100 mm;Net weight=approx. 102 kg;Packing weight=approx. 127 kg;Remote control=7C industrial remote control;Lifting system=Remote lifting;Motor type=Industrial-grade brushless motor;Emission standard=EPA / Euro 5 engines available;Throttle=Electronic throttle;Warning beacon=Included
+#sh-1000b|SH-1000B Remote Control Flail Mower|A 1000 mm tracked remote flail mower for larger grass, weed and brush jobs that need wide working coverage.|1000 mm~Cutting width;450–810cc~Engine range;15 HP~Gasoline;C7~Industrial remote
+Model=SH-1000B;Cutting width=1000 mm;Machine size=1200×1420×620 mm;Packing size=1470×1250×750 mm;Remote control=C7 industrial remote / C7-MINI Plus;Lifting system=Remote lifting;Motor type=Industrial-grade brushless motor;Emission standard=EPA / Euro 5 engines available;Throttle=Electronic throttle;Warning beacon=Included;Engine range=450–810cc gasoline, V-twin available
+#sh-lb|SH-LB Tracked Remote Flail Mower|Heavy-duty tracked remote flail mower with 1000 or 1200 mm cutting width for slopes, orchards, farms and rough terrain.|1000 / 1200 mm~Cutting width;360–370 kg~Net weight;6~Engine options;Rubber~Track drive
+Engine options=KOOP 195F diesel / KOOP 292 Euro 5 diesel / Loncin 459cc / 622cc / 764cc / 999cc gasoline;Remote control=Industrial remote controller;Options=Warning light, electromagnetic brake, hammer flail blades
+CMP:Model~SH-1000LB~SH-1200LB;Cutting width~1000 mm~1200 mm;Machine size~1650×1200×1000 mm~1650×1400×1000 mm;Packing size~1720×1270×1130 mm~1720×1470×1130 mm;Net weight~approx. 360 kg~approx. 370 kg;Gross weight~approx. 425 kg~approx. 465 kg;Drive type~Rubber track~Rubber track;Operation~Remote control~Remote control
+#tank|Tank Series Remote Flail Mower|SH-800DL / SH-900DL / SH-1000 tracked remote flail mowers for steep slopes, roadsides, solar farms and rough vegetation.|55°~Max slope;800–1000 mm~Cutting width;20–180 mm~Cutting height;up to 800 m~Remote range
+Optional tools=Sprayer system, cargo rack, snow blade, lighting, warning beacon, electronic throttle
+CMP:Model~SH-800DL~SH-900DL~SH-1000;Cutting width~800 mm~900 mm~1000 mm;Cutting height~20–180 mm~20–180 mm~20–180 mm;Track width~150 mm~150 mm~150 mm;Track length~1000 mm~1000 mm~1000 mm;Travel speed~0–5 km/h~0–5 km/h~0–5 km/h;Max slope~55°~55°~55°;Start~Electric~Electric~Electric;Engine options~Loncin 608 / 764 / 803cc, B&S 810cc~Loncin 608 / 764 / 803cc, B&S 810cc~Loncin 608 / 764cc, B&S 810cc;Remote range~up to 800 m (open areas)~up to 800 m (open areas)~up to 800 m (open areas);Net weight~316 kg~325 kg~340 kg;Packing weight~370 kg~395 kg~420 kg;Packing size~On request~1470×1370×750 mm~1470×1570×750 mm
+</script>
+
+<script>
+/* ============ CONTACT SETTINGS – change these ============ */
+const CONTACT = {
+  email: 'info@avascutemachinery.com',   // your e-mail address
+  whatsapp: '',                           // your WhatsApp number, digits only incl. country code, e.g. '491701234567'
+  company: "AVA's Cute Machinery"
+};
+/* ========================================================= */
+
+const $ = (s, r = document) => r.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+function mailHref(subject, body = '') {
+  return `mailto:${CONTACT.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+function waHref(text) {
+  const t = encodeURIComponent(text);
+  return CONTACT.whatsapp ? `https://wa.me/${CONTACT.whatsapp}?text=${t}` : `https://api.whatsapp.com/send?text=${t}`;
+}
+const waBtn = (text, label = 'Get Price on WhatsApp', cls = 'btn btn-wa') =>
+  `<a class="${cls}" href="${waHref(text)}" target="_blank" rel="noopener"><svg class="ico-inline"><use href="#i-wa"/></svg>${label}</a>`;
+const mailBtn = (subject, body, label = 'Send Inquiry by Email', cls = 'btn btn-ghost') =>
+  `<a class="${cls}" href="${mailHref(subject, body)}"><svg class="ico-inline"><use href="#i-mail"/></svg>${label}</a>`;
+
+/* ---------- categories ---------- */
+const CATS = {
+  'mini-excavators': {
+    name: 'Mini Excavators', short: 'Mini Excavator', icon: 'excavator',
+    lead: 'Compact crawler excavators from 1 to 2.8 tons for digging, trenching, farms, landscaping and small construction — including a lithium battery model.',
+    models: ['t10-1','t10-pro','t12','t13pro','t15','t18','t20','gw16','gw18','gw25','gw30'],
+    apps: [['Landscaping & gardens','Reshape soil, dig planting pits, move material and renovate private properties where big machines cannot enter.'],
+           ['Farm & orchard trenching','Clean ditches, dig irrigation lines and handle greenhouse or orchard maintenance.'],
+           ['Utility & drainage','Shallow utility lines, cable routes, drainage channels and backfilling.'],
+           ['Rental & small construction','Site preparation, cleanup and attachment work for contractors and rental fleets.']],
+    feats: [['Compact body','Narrow tracks and a small tail swing let the machine enter gardens, backyards and orchards.'],
+            ['Easy to transport','Light enough for a trailer — practical for daily moves between job sites.'],
+            ['Attachment ready','Buckets, auger, breaker, ripper, thumb clamp, quick hitch and grapple can be matched.'],
+            ['Engine choice','KOOP, Briggs & Stratton, Laidong, Kubota and Yanmar options depending on the model.'],
+            ['Canopy or cabin','Most models can be ordered with an open canopy or a closed cabin.'],
+            ['Export support','Configuration check, wooden-box packing and shipping communication for overseas buyers.']],
+    attach: ['Digging bucket 200/300/400 mm','V bucket','Rake','Quick hitch','Clamshell bucket 600/800 mm','Ripper','Pallet fork','Auger 200–600 mm','Hydraulic breaker','Thumb clamp','Grapple','Hedge trimmer','Loading ramps'],
+    faq: [['Which size do I need?','Up to 1.3 t suits gardens and backyards; 1.5–2 t handles farm trenching and small construction; the 2.2–2.8 t GW models are for heavier, demanding sites.'],
+          ['Can I get a cabin?','Most models are available with canopy or cabin — the packing size changes, so tell us which one you need.'],
+          ['Which engines comply with EPA / Euro 5?','Emission documents depend on the engine you pick. We confirm the correct documents for your destination before ordering.'],
+          ['Is there an electric model?','Yes — the T10-PRO runs on a 72V 150Ah lithium battery, ideal for indoor or noise-sensitive work.']]
+  },
+  'skid-steer-loaders': {
+    name: 'Skid Steer Loaders', short: 'Skid Steer', icon: 'skid',
+    lead: 'Wheeled, tracked and ride-on compact loaders for material handling, grading, farm yards and attachment-based work.',
+    models: ['s360','t360','s390','t390','s460','t460','s490','t490','s750','t750','v1000','c1200'],
+    apps: [['Landscaping','Planting preparation, light grading, soil moving and yard cleanup.'],
+           ['Farm & ranch','Feed and bedding handling, manure cleanup and work on muddy lanes.'],
+           ['Construction yards','Loading, cleanup, pallet handling and trench support in compact zones.'],
+           ['Rental fleets','Simple controls help first-time rental users start quickly.']],
+    feats: [['Wheels or tracks','S-models run on wheels for firm ground; T-models use rubber tracks for mud and soft soil.'],
+            ['Walk-behind or ride-on','360/460 series are stand-on; 390/490 series have a seat for long working days.'],
+            ['Hydraulic options','Optional three-pump, three-valve packages with dual auxiliary outputs.'],
+            ['Electric or engine','Lithium electric models and gasoline or diesel engines from KOOP, Rato, B&S, Kubota and Yanmar.'],
+            ['Pilot controls','750 series, V1000 and C1200 use hydraulic pilot controls for precise operation.'],
+            ['Huge tool range','More than 25 attachments — augers, trenchers, grapples, sweepers, snow blowers and more.']],
+    attach: ['4-in-1 grapple bucket','Earth auger','Trencher','Pallet fork','Grapple fork','Angle broom','Enclosed sweeper','Snow blower','Dozer blade','Flail mower','Stump grinder','Power rake','Backhoe','Concrete mixer bucket'],
+    faq: [['Wheels or tracks?','Wheels are faster and cheaper on firm or paved ground. Tracks give better grip and less ground damage on mud, sand and grass.'],
+          ['What rated load do I need?','Stand-on models carry 200–300 kg; the 750 series handles 400 kg and the V1000 500 kg.'],
+          ['Do attachments fit all models?','Mounting plate, hydraulic flow and pressure must match. Send us the attachment list and we check compatibility.'],
+          ['Is there an electric version?','Several models can be ordered with a lithium iron phosphate battery pack.']]
+  },
+  'remote-control-mowers': {
+    name: 'Remote Control Mowers', short: 'Remote Mower', icon: 'mower',
+    lead: 'Tracked remote-controlled flail mowers from 550 to 1200 mm cutting width for slopes up to 55°, orchards, roadsides and solar farms.',
+    models: ['sh-550j','sh-600b','sh-800dl','sh-1000b','sh-lb','tank'],
+    apps: [['Steep slopes','Mow embankments and hillsides while the operator stays at a safe distance.'],
+           ['Orchards & vineyards','Low-profile body fits under branches and between rows.'],
+           ['Roadsides & railways','Vegetation control along verges, ditches and embankments.'],
+           ['Solar farms','Cut grass between and under panel rows without damaging the installation.']],
+    feats: [['Remote operation','Industrial remote controllers with 70 m up to 800 m range in open areas.'],
+            ['Rubber tracks','Wide tracks keep the mower stable on slopes and rough ground.'],
+            ['Flail cutting','Heavy-duty flail or hammer blades cut tall grass, weeds and light brush.'],
+            ['Remote lifting','Adjust cutting height on the go — 20 to 180 mm on the larger models.'],
+            ['Engine choice','Loncin, Briggs & Stratton and KOOP diesel options, EPA / Euro 5 available.'],
+            ['Extra tools','Sprayer, cargo rack, snow blade, lights and warning beacon on the Tank series.']],
+    attach: ['Flail mower deck','Hammer flail blades','Sprayer system','Cargo rack','Snow blade','Warning beacon','LED work lights','Electromagnetic brake'],
+    faq: [['How steep can it mow?','The Tank series and SH-800DL are rated for slopes of 55° and more. Always check ground conditions and recovery access.'],
+          ['Which cutting width do I need?','550–600 mm for small plots and tight rows; 800–1000 mm for larger areas; 1200 mm for big open slopes.'],
+          ['How far does the remote reach?','Typically 70–100 m; the Tank series reaches up to 800 m in open areas.'],
+          ['Can I use it in winter?','With the optional snow blade the Tank series can clear paths and yards.']]
+  }
+};
+const TAGS = {'t10-1':'1.0 Ton','t10-pro':'Lithium','t12':'1.2 Ton','t13pro':'1.3 Ton','t15':'1.5 Ton','t18':'1.4 Ton','t20':'2 Ton','gw16':'1.5 Ton','gw18':'1.8 Ton','gw25':'Side Swing','gw30':'2.8 Ton',
+  's360':'Wheeled','t360':'Tracked','s390':'Ride-On','t390':'Ride-On Tracked','s460':'Wheeled','t460':'Tracked','s490':'Ride-On','t490':'Ride-On Tracked','s750':'Pilot Control','t750':'Pilot Control','v1000':'500 kg Load','c1200':'Kubota',
+  'sh-550j':'550 mm','sh-600b':'600 mm','sh-800dl':'800 mm','sh-1000b':'1000 mm','sh-lb':'1000/1200 mm','tank':'55° Slope'};
+
+/* ---------- parse product data ---------- */
+const PRODUCTS = {};
+(function parse() {
+  const lines = $('#product-data').textContent.split('\n').map(l => l.trim()).filter(Boolean);
+  let cur = null;
+  for (const l of lines) {
+    if (l.startsWith('#')) {
+      const [slug, name, lead, stats] = l.slice(1).split('|');
+      cur = PRODUCTS[slug] = { slug, name, lead, stats: (stats || '').split(';').filter(Boolean).map(s => s.split('~')), specs: [], cmp: null };
+    } else if (l.startsWith('CMP:')) {
+      cur.cmp = l.slice(4).split(';').map(r => r.split('~'));
+    } else {
+      l.split(';').forEach(p => { const i = p.indexOf('='); if (i > 0) cur.specs.push([p.slice(0, i), p.slice(i + 1)]); });
+    }
+  }
+  for (const [cs, c] of Object.entries(CATS)) c.models.forEach(m => { PRODUCTS[m].cat = cs; });
+  PRODUCTS['v1000'].icon = PRODUCTS['c1200'].icon = 'tracked';
+  ['t360','t390','t460','t490','t750'].forEach(m => PRODUCTS[m].icon = 'tracked');
+})();
+const icon = p => p.icon || CATS[p.cat].icon;
+const art = (id, cls = '') => `<svg class="${cls}" viewBox="0 0 300 220" aria-hidden="true"><use href="#${id}"/></svg>`;
+
+function productCard(slug) {
+  const p = PRODUCTS[slug];
+  const bullets = p.stats.slice(0, 3).map(s => `<li>${esc(s[1])}: ${esc(s[0])}</li>`).join('');
+  return `<div class="prod">
+    <a class="ill" href="#/product/${slug}"><span class="tag">${esc(TAGS[slug] || '')}</span>${art(icon(p))}</a>
+    <div class="body"><h3><a href="#/product/${slug}">${esc(p.name)}</a></h3><ul>${bullets}</ul>
+    <div class="actions"><a href="#/product/${slug}" class="btn btn-primary btn-sm">View Details</a><a href="#/quote?product=${encodeURIComponent(p.name)}" class="btn btn-ghost btn-sm">Request Quote</a></div></div>
+  </div>`;
+}
+const crumbs = items => `<div class="crumbs">${items.map(([t, h]) => h ? `<a href="${h}">${esc(t)}</a>` : `<span>${esc(t)}</span>`).join('<span>›</span>')}</div>`;
+const pageHero = (eyebrow, title, lead, cr) => `<section class="page-hero"><div class="wrap">${crumbs(cr)}<span class="eyebrow">${eyebrow}</span><h1>${title}</h1>${lead ? `<p>${lead}</p>` : ''}</div></section>`;
+const ctaBand = (title, text, product) => `<section class="section tight"><div class="wrap"><div class="cta-band"><div><h2>${title}</h2><p>${text}</p></div>
+  <div class="actions"><a href="#/quote${product ? '?product=' + encodeURIComponent(product) : ''}" class="btn btn-light">Request a Quote</a>${waBtn(`Hello ${CONTACT.company}, I'm interested in ${product || 'your machines'}.`, 'WhatsApp', 'btn btn-outline-light')}</div></div></div></section>`;
+
+/* ---------- attachments ---------- */
+const ATTACH = {
+  excavator: [['Digging Bucket','Trenching, digging and loading — 200, 300 and 400 mm widths.'],['V Bucket','V-shaped profile for clean drainage and cable trenches.'],['Clamshell Bucket','Grab loose material, 600 or 800 mm.'],['Earth Auger','Post holes and tree planting, 200–600 mm diameter.'],['Hydraulic Breaker','Break concrete, rock and asphalt.'],['Ripper','Loosen compacted or frozen ground and roots.'],['Quick Hitch','Change tools in seconds without tools.'],['Thumb Clamp','Hold rocks, logs and debris against the bucket.'],['Grapple','Handle brush, branches and scrap.'],['Rake','Clear stones and roots, level soil.'],['Pallet Fork','Move pallets and building material.'],['Hedge Trimmer','Hydraulic hedge and verge trimming.'],['Loading Ramps','Drive the machine safely onto a trailer.']],
+  skid: [['4-in-1 Grapple Bucket','Dig, grab, doze and level with one tool.'],['Skeleton Rock Bucket','Sift rocks and debris out of soil.'],['Soil Aerator Spike Roller','Aerate lawns and sports fields.'],['Floor Scraper Blade','Scrape barns, floors and yards.'],['Mower Attachment','Rotary mowing for grass areas.'],['Enclosed Sweeper','Sweep and collect dust and debris.'],['Concrete Mixer Bucket','Mix and pour concrete on site.'],['Concrete Mixer Drum','Larger batches for small pours.'],['Trencher','Drainage, irrigation and cable trenches.'],['Flail Mower Attachment','Cut tall grass, weeds and light brush.'],['Hydraulic Attachment Drive','Power unit for rotating tools.'],['Stump Planer','Plane stumps flat to the ground.'],['Earth Auger','Drill post holes and planting pits.'],['Snow Blower','Clear paths, driveways and yards.'],['Hydraulic Log Splitter','Split firewood quickly and safely.'],['Land Leveler','Grade and level soil surfaces.'],['Backhoe Attachment','Turn the loader into a small digger.'],['Angle Broom','Push snow, dust and debris sideways.'],['Stump Grinder','Grind stumps below ground level.'],['Soil Ripper','Break up hard, compacted ground.'],['Wood Chipper','Chip branches and pruning waste.'],['Power Rake / Soil Conditioner','Prepare seed beds and remove stones.'],['Dozer Blade','Push and spread soil and gravel.'],['Soil Cultivator','Till soil for planting.'],['Vibratory Roller','Compact soil and gravel bases.'],['Grapple Fork','Handle brush, hay and bulky material.'],['Pallet Fork','Move pallets and building supplies.']]
+};
+
+/* ---------- news ---------- */
+const NEWS = [
+ {slug:'how-to-choose-mini-excavator',cat:'Mini Excavators',title:'How to Choose the Right Mini Excavator for Your Project',teaser:'Weight class, digging depth, width and engine — the four questions to answer before you ask for a price.',
+  body:`<p>A mini excavator that is too small wastes time; one that is too big won't fit through the gate. Start with the job, not the model name.</p>
+  <h2>1. Where does the machine need to go?</h2><p>Measure the narrowest access point. Our 1 ton T10-1 is only 940 mm wide, while the GW30 needs about 1.4 m. If you work in backyards or greenhouses, width decides almost everything.</p>
+  <h2>2. How deep do you dig?</h2><ul><li>Up to 1.6–1.8 m: planting pits, garden drainage, small foundations — T10-1, T12, T13PRO, T15.</li><li>2.1–2.3 m: farm drainage, utility lines, septic work — T18, T20, GW16, GW18.</li><li>2.4 m+: demanding construction, side-swing work next to walls — GW25, GW30.</li></ul>
+  <h2>3. Which power source fits your market?</h2><p>Emission rules differ by country. Kubota and Yanmar diesels suit EPA and Euro 5 markets; KOOP and Briggs & Stratton keep cost down; the T10-PRO lithium model is perfect for indoor or noise-sensitive sites.</p>
+  <h2>4. Which attachments will you use?</h2><p>List the tools you need — auger, breaker, thumb, quick hitch — before choosing. Heavier tools such as breakers need enough hydraulic flow and machine weight.</p>
+  <div class="callout"><b>Tip:</b> Send us photos of your job site and the depth you need. We recommend a model and configuration for free.</div>`},
+ {slug:'mini-excavator-attachments-guide',cat:'Attachments',title:'Mini Excavator Attachments Guide: Bucket, Auger and Breaker',teaser:'Which tools turn a small digger into a multi-purpose machine — and what to check before you order them.',
+  body:`<p>The right attachments can double the number of jobs one mini excavator can do. Here are the most popular tools and what they are for.</p>
+  <h2>Buckets</h2><p>A standard digging bucket (200/300/400 mm) covers most trenching and loading. A V bucket cuts clean drainage trenches, and a clamshell bucket grabs loose material.</p>
+  <h2>Earth auger</h2><p>Drills 200–600 mm holes for fence posts, trees and foundations. Check the auger drive's flow range against the machine.</p>
+  <h2>Hydraulic breaker</h2><p>Breaks concrete, rock and asphalt. It needs a breaker pipeline and a shut-off valve — models like the T18 come with this piping.</p>
+  <h2>Before you order</h2><ol><li>Confirm the pin diameter and mounting interface.</li><li>Match hydraulic flow and pressure.</li><li>Decide whether you want a quick hitch for faster changes.</li></ol>`},
+ {slug:'how-to-choose-mini-skid-steer-loader',cat:'Skid Steer Loaders',title:'How to Choose a Mini Skid Steer Loader',teaser:'Wheels or tracks, stand-on or ride-on, electric or diesel — how to pick the right compact loader.',
+  body:`<p>Mini skid steers look similar, but small differences change how well they work for you.</p>
+  <h2>Wheels or tracks?</h2><p>Wheeled S-models are simple, fast and gentle on budget — ideal for paved yards and firm soil. Tracked T-models spread their weight, grip in mud and protect lawns.</p>
+  <h2>Stand-on or ride-on?</h2><p>The 360 and 460 series are stand-on and very compact. The 390 and 490 series add a seat for longer shifts. The 750 series, V1000 and C1200 use pilot controls for precise, lighter operation.</p>
+  <h2>Rated load</h2><p>Stand-on models lift 200–300 kg; the 750 series 400 kg; the V1000 500 kg. Pick a machine with some reserve for wet soil and heavy tools.</p>
+  <h2>Hydraulics and attachments</h2><p>Augers, trenchers and mowers need auxiliary hydraulics. Ask for the three-pump package if you run high-flow tools.</p>`},
+ {slug:'mini-skid-steer-attachment-hydraulic-compatibility',cat:'Technical Matrix',title:'Mini Skid Steer Attachment Hydraulic Compatibility',teaser:'Mounting, flow, pressure, return and case drain — the checks to do before connecting any attachment.',
+  body:`<p>Most attachment problems come from a mismatch between tool and carrier. Check these five points.</p>
+  <h2>Compatibility checklist</h2>
+  <div class="table-scroll"><table><thead><tr><th>Check</th><td><b>What to confirm</b></td></tr></thead><tbody>
+  <tr><th>Mounting plate</th><td>Mini skid steer plate type and locking pins</td></tr>
+  <tr><th>Hydraulic flow</th><td>Tool's required L/min vs. auxiliary output</td></tr>
+  <tr><th>Pressure</th><td>Tool rating vs. system pressure (17–25 bar class)</td></tr>
+  <tr><th>Return line</th><td>Free return to tank for motors such as augers and trenchers</td></tr>
+  <tr><th>Case drain</th><td>Required for some motors — check before ordering</td></tr>
+  <tr><th>Electrical</th><td>Switches or plugs for tools with electric functions</td></tr>
+  </tbody></table></div>
+  <p style="margin-top:18px">Send us your carrier model and the list of tools — we check each combination before quoting.</p>`},
+ {slug:'remote-control-mower-applications',cat:'Remote Mowers',title:'Remote Control Mower Applications for Slopes, Farms and Orchards',teaser:'Where a tracked remote mower saves the most time — and where it keeps people safe.',
+  body:`<p>Remote mowers are built for places where walk-behind mowing is slow, tiring or dangerous.</p>
+  <h2>Slopes and embankments</h2><p>Rubber tracks and a low centre of gravity let the Tank series work slopes up to 55° while the operator stays on flat ground.</p>
+  <h2>Orchards and vineyards</h2><p>The low body passes under branches. Compact 550–800 mm models fit between rows.</p>
+  <h2>Roadsides and solar farms</h2><p>Long remote range and a warning beacon make roadside work safer; a narrow deck mows between panel rows.</p>
+  <h2>Farms and estates</h2><p>Flail blades handle tall grass, weeds and light brush that would stall a lawn mower.</p>`},
+ {slug:'best-mower-for-steep-hills',cat:'Slope Mowing',title:'Best Mower for Steep Hills and Slopes: How to Choose',teaser:'Compare traction, terrain, vegetation and cutting systems before you pick equipment for hills.',
+  body:`<p>On a hill the wrong mower is not just slow — it is unsafe. Use these points to compare.</p>
+  <h2>Traction</h2><p>Tracks beat wheels on slopes. Look for wide rubber tracks (150 mm on the Tank series) and a low body.</p>
+  <h2>Operator position</h2><p>Remote control keeps people off the slope entirely — the biggest safety gain.</p>
+  <h2>Vegetation</h2><p>Short grass: any deck. Tall grass and weeds: flail cutting. Light brush: hammer flail blades and a stronger engine.</p>
+  <h2>Area size</h2><p>Up to a few thousand m²: 550–800 mm. Large embankments: 1000–1200 mm.</p>`},
+ {slug:'remote-mower-site-assessment',cat:'Site Assessment',title:'Remote Mower Assessment for Slopes, Orchards & Solar Farms',teaser:'Record gradient, vegetation, clearance, hazards and recovery access before you choose a machine.',
+  body:`<p>Send us this information and we can recommend the right remote mower and engine.</p>
+  <h2>Site checklist</h2><ol><li><b>Gradient</b> — maximum slope angle and length of the slope.</li><li><b>Surface</b> — dry grass, wet clay, rocks, loose soil.</li><li><b>Vegetation</b> — height and type: grass, weeds, brush.</li><li><b>Clearance</b> — branch height in orchards, gap under solar panels.</li><li><b>Hazards</b> — ditches, drop-offs, stones, cables, people or traffic nearby.</li><li><b>Recovery access</b> — how would you retrieve the machine if it stops on the slope?</li><li><b>Area</b> — approximate m² per mowing cycle.</li></ol>
+  <div class="callout">Photos and a short video of the site help us most.</div>`},
+ {slug:'remote-control-mower-for-home-use',cat:'Remote Mowers',title:'Remote Control Mower for Home Use',teaser:'When a remote mower makes sense for a private property — and which model to pick.',
+  body:`<p>Remote mowers are not only for professionals. Owners of large, steep or overgrown properties use them too.</p>
+  <h2>When it makes sense</h2><ul><li>Steep garden banks that are unsafe to mow by hand.</li><li>Overgrown plots, meadows and orchards.</li><li>Large properties where mowing takes hours.</li></ul>
+  <h2>Which model?</h2><p>The SH-550J and SH-600B are light (about 100–130 kg), compact and easy to store. For bigger or steeper plots the SH-800DL is the step up.</p>`},
+ {slug:'pre-shipment-inspection-checklist',cat:'Quality',title:'50-Point Pre-Shipment Inspection Checklist',teaser:'Everything we check before a machine leaves the factory — and what you can ask to see.',link:'#/pre-shipment-inspection',
+  body:''}
+];
+
+/* ---------- PDI ---------- */
+const PDI = [
+  ['Order Confirmation',['Model matches order','Engine brand and model','Emission configuration','Machine color','Logo / decals','Quantity','Canopy or cabin','Track or tire type']],
+  ['Appearance Inspection',['Paint finish and coverage','Guards and covers fitted','Warning labels present','Nameplate and serial number','Fasteners tightened','Tracks / tires condition','No oil leaks at rest','Glass and mirrors (cabin)']],
+  ['Engine & Hydraulic Test',['Cold start','Idle stability','Throttle response','Oil level','Coolant level','Hydraulic oil level','Hydraulic hoses and fittings','Pressure check','Travel forward / reverse','Steering / turning','Boom, arm and bucket functions','Swing function','Auxiliary hydraulics','Emergency stop']],
+  ['Attachment Matching',['Ordered attachments present','Pin and mounting fit','Quick coupler function','Hoses and couplings','Attachment test run','Spare teeth / blades']],
+  ['Photo & Video Evidence',['Overall machine photos','Nameplate photo','Engine plate photo','Working test video','Attachment test video','Accessories photo']],
+  ['Packing & Loading',['Fuel and battery prepared for shipping','Wooden box / frame condition','Accessories and manuals packed','Machine secured in box','Container loading check','Loading photos','Shipping marks','Document set prepared']]
+];
+
+/* ---------- views ---------- */
+const V = {};
+
+V.home = () => {
+  const featured = ['t10-1','t18','gw18','s360','t460','v1000','sh-800dl','sh-lb','tank'];
+  return `
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow" id="h-eye">Mini Excavators</span>
+      <h1 id="h-title">Compact Construction Machinery for <em>Dealers, Contractors</em> and Farms</h1>
+      <p class="lead" id="h-lead">Compare AVA's mini excavators for landscaping, trenching, farms, gardens and small construction projects.</p>
+      <div class="chips" id="h-chips"></div>
+      <div class="hero-actions">
+        <a href="#/category/mini-excavators" class="btn btn-primary" id="h-btn">Explore Mini Excavators →</a>
+        <a href="#/quote" class="btn btn-ghost">Request a Quote</a>
+      </div>
+      <div class="slider-dots" id="dots"></div>
+    </div>
+    <div class="hero-art">
+      <div class="blob"></div>
+      <span class="sparkle" style="top:8%;left:12%">✦</span>
+      <span class="sparkle" style="top:18%;right:8%;animation-delay:.8s">♥</span>
+      <span class="sparkle" style="bottom:12%;left:4%;animation-delay:1.5s">✦</span>
+      <svg class="float" viewBox="0 0 300 220" aria-hidden="true"><use id="h-svg" href="#excavator"/></svg>
+    </div>
+  </div>
+</section>
+<div class="strip"><div class="wrap">
+  <a href="#/category/mini-excavators">Mini Excavators</a><a href="#/category/skid-steer-loaders">Skid Steer Loaders</a>
+  <a href="#/category/remote-control-mowers">Remote Control Mowers</a><a href="#/attachments">Attachments</a>
+  <a href="#/quote">Configuration Support</a><a href="#/about">OEM Color &amp; Logo Options</a>
+  <a href="#/pre-shipment-inspection">Pre-Shipment Inspection</a><a href="#/quote">Overseas Shipping Assistance</a>
+</div></div>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head"><span class="eyebrow">Product Categories</span><h2>Our Main Machinery Products</h2>
+      <p>Choose a product category first. Every category page links to dedicated model pages with confirmed product information and direct inquiry options.</p></div>
+    <div class="grid-4">
+      ${Object.entries(CATS).map(([s, c]) => `<a class="cat" href="#/category/${s}"><div class="ill">${art(c.icon)}</div><h3>${c.name}</h3><p>${c.lead.split(' — ')[0].split(',').slice(0,2).join(',')}.</p><span class="more">View ${c.short} Range (${c.models.length}) →</span></a>`).join('')}
+      <a class="cat" href="#/attachments"><div class="ill">${art('attach')}</div><h3>Attachments</h3><p>Work tools for excavators and skid steers, with carrier and hydraulic compatibility checks.</p><span class="more">View Attachment Directory →</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="section white">
+  <div class="wrap">
+    <div class="section-head"><span class="eyebrow">Featured Products</span><h2>Featured Machines for Global Buyers</h2>
+      <p>Open the model page for technical details, applications, options and a configuration-based quotation.</p></div>
+    <div class="grid-3">${featured.map(productCard).join('')}</div>
+    <div style="text-align:center;margin-top:40px"><a href="#/products" class="btn btn-ghost">View all ${Object.keys(PRODUCTS).length} models →</a></div>
+  </div>
+</section>
+
+<section class="section confidence">
+  <div class="wrap">
+    <div class="section-head"><span class="eyebrow">Buyer Confidence</span><h2>Clear Confirmation Before Delivery</h2>
+      <p>Trust is built through order-specific evidence. We focus on configuration records, machine checks, attachment matching and shipment preparation rather than unverified claims.</p></div>
+    <div class="grid-4">
+      <div class="step"><div class="num">01 / ORDER</div><h3>Written Configuration Check</h3><p>Model, engine, quantity, color, logo and attachment requirements are confirmed against the order.</p></div>
+      <div class="step"><div class="num">02 / MACHINE</div><h3>Functional Inspection</h3><p>Starting, travel, steering, hydraulics, working devices and safety functions are checked before delivery.</p></div>
+      <div class="step"><div class="num">03 / EVIDENCE</div><h3>Photos and Test Videos</h3><p>Order-specific machine, nameplate, attachment and testing evidence can be provided for buyer confirmation.</p></div>
+      <div class="step"><div class="num">04 / SHIPPING</div><h3>Packing and Loading Check</h3><p>Packing condition, ordered accessories and loading preparation are recorded before shipment.</p></div>
+    </div>
+    <p class="note">Certification and emission documents depend on the selected engine, machine configuration and destination market. Confirm the applicable documents before ordering.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head"><span class="eyebrow">Applications</span><h2>Machines for Different Working Conditions</h2>
+      <p>Choose by task, surface, access, load and attachment requirements — not by model name alone.</p></div>
+    <div class="apps">
+      <a class="app c1" href="#/category/mini-excavators">${art('excavator')}<h3>Construction &amp; Trenching</h3><p>Compact excavators and attachments for digging, soil preparation and ground loosening.</p></a>
+      <a class="app c2" href="#/product/v1000">${art('tracked')}<h3>V1000 Compact Track Loader</h3><p>Tracked skid steer loader for construction material handling, grading and attachment work.</p></a>
+      <a class="app c3" href="#/product/sh-800dl">${art('mower')}<h3>Tracked Orchard Mower</h3><p>Compact tracked remote mower for orchard rows and routine grass management.</p></a>
+    </div>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap">
+    <div class="section-head"><span class="eyebrow">Attachments</span><h2>Attachments for Two Carrier Types</h2>
+      <p>Compare mini excavator attachments and skid steer loader attachments separately. Confirm the carrier model, mounting interface, hydraulic flow, pressure and coupler type before ordering.</p></div>
+    <div class="attach-wrap">
+      <div class="attach-col"><div class="top"><h3>Mini Excavator Attachments</h3><a href="#/attachments">View All →</a></div>
+        <div class="att-grid">${[['Digging Bucket','Trenching and loading'],['Earth Auger','Post holes and planting'],['Hydraulic Breaker','Concrete and hard material'],['Quick Coupler','Faster tool changes']].map(a => `<a class="att" href="#/attachments"><small>MINI EXCAVATOR</small><b>${a[0]}</b><span>${a[1]}</span></a>`).join('')}</div></div>
+      <div class="attach-col"><div class="top"><h3>Skid Steer Loader Attachments</h3><a href="#/attachments">View All →</a></div>
+        <div class="att-grid">${[['Earth Auger','Drilling and planting'],['Trencher','Drainage and utility work'],['Flail Mower','Grass and vegetation control'],['Grapple Bucket','Brush and material handling']].map(a => `<a class="att" href="#/attachments"><small>SKID STEER LOADER</small><b>${a[0]}</b><span>${a[1]}</span></a>`).join('')}</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section white">
+  <div class="wrap">
+    <div class="section-head"><span class="eyebrow">Cooperation Network</span><h2>Built for Long-Term B2B Cooperation</h2>
+      <p>We welcome equipment dealers, rental companies, contractors and machinery distributors. Brand logos will only be displayed after a real cooperation relationship is confirmed.</p></div>
+    <div class="grid-4">${partners()}</div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="dealer">
+      <div><span class="eyebrow">Dealer Support</span><h2>Discuss Your Market and Product Range</h2>
+        <p>Long-term cooperation can include product photos, videos, OEM colors, logo options, attachment packages and recommended spare-parts planning.</p>
+        <div class="actions"><a href="#/quote?product=Dealer%20Cooperation" class="btn btn-light">Become a Dealer</a>${waBtn(`Hello ${CONTACT.company}, I'd like to discuss dealer cooperation.`, 'Talk on WhatsApp', 'btn btn-outline-light')}</div></div>
+      <div class="dealer-list"><div>Product Media</div><div>OEM Branding</div><div>Attachment Packages</div><div>Spare-Parts Planning</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap pdi">
+    <div><span class="eyebrow">Quality Check Before Delivery</span><h2>50-Point Pre-Shipment Inspection</h2>
+      <p>Every order is checked against the confirmed configuration, machine condition, functional operation, attachments, accessories and packing requirements.</p>
+      <div class="box"><h3>Photos and Videos Before Shipping</h3><p style="margin:0">Buyers can request order-specific machine photos and functional test videos before delivery, helping confirm the machine and ordered configuration.</p></div>
+      <div class="actions"><a href="#/quote?product=Pre-shipment%20PDI%20Report" class="btn btn-primary btn-sm">Request Pre-shipment PDI Report</a><a href="#/pre-shipment-inspection" class="btn btn-ghost btn-sm">View Full Checklist</a></div></div>
+    <div class="checks">${PDI.map((g, i) => `<div class="check"><div class="n">${i + 1}</div><div><b>${g[0]}</b><span>${g[1].slice(0, 4).join(', ')}.</span></div></div>`).join('')}</div>
+  </div>
+</section>
+
+<section class="section white">
+  <div class="wrap">
+    <div class="section-head"><span class="eyebrow">News Center</span><h2>Compact Machinery Buyer Resources</h2>
+      <p>Practical selection guides help buyers compare machines and prepare accurate inquiry information.</p></div>
+    <div class="grid-4">${NEWS.slice(3, 7).concat(NEWS[2]).slice(0,4).map(newsCard).join('')}</div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="res-head"><div><span class="eyebrow">Technical Resources</span><h2>Use Practical Technical Checklists</h2>
+      <p>Field-ready resources for pre-shipment inspection, attachment hydraulics and remote mowing conditions before selecting equipment or requesting a quotation.</p></div>
+      <a href="#/news" class="btn btn-ghost">Browse All Buyer Guides →</a></div>
+    <div class="grid-3">
+      <a class="res" href="#/pre-shipment-inspection"><small>PRE-SHIPMENT INSPECTION</small><h3>50-Point PDI Checklist</h3><p>Review machine condition, controls, hydraulics, function tests, attachments and packing evidence.</p><span class="go">OPEN PDI CHECKLIST →</span></a>
+      <a class="res" href="#/news/mini-skid-steer-attachment-hydraulic-compatibility"><small>MINI SKID STEER</small><h3>Hydraulic Compatibility Matrix</h3><p>Compare mounting, flow, pressure, return, case drain and electrical controls.</p><span class="go">OPEN MATRIX →</span></a>
+      <a class="res" href="#/news/remote-mower-site-assessment"><small>REMOTE MOWER</small><h3>Slope &amp; Site Assessment</h3><p>Document gradient, vegetation, clearance, hazards and recovery access.</p><span class="go">OPEN CHECKLIST →</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap">
+    <div class="section-head"><span class="eyebrow">FAQ</span><h2>Questions from Machinery Buyers</h2>
+      <p>Basic information for dealers, contractors, farms and equipment buyers preparing an international inquiry.</p></div>
+    <div class="faq">${faqHtml([
+      ['What machines do you supply?','Mini excavators from 1 to 2.8 tons, wheeled, tracked and ride-on mini skid steer loaders, compact track loaders, tracked remote control mowers, and attachments for excavators and skid steers.'],
+      ['Can I customize the machine color and logo?','Yes. OEM colors, logo decals and selected functional options are available for batch orders. Pink is, of course, our favourite.'],
+      ['Do you supply machine attachments?','Yes — more than 40 tools. We check carrier model, mounting interface, hydraulic flow and pressure for every combination.'],
+      ['Can you ship machines overseas?','Yes. We arrange export packing, loading photos and shipping communication. Required certificates depend on engine, configuration and destination market.'],
+      ['How can I get the latest price?','Send the machine type, quantity, attachments and destination country via the quote form, e-mail or WhatsApp. We reply with a configuration-based quotation.']], true)}</div>
+  </div>
+</section>
+${quoteBand()}`;
+};
+
+function partners() {
+  return [['i-store','Machinery Dealers','Model media, OEM options and product range planning for local sales.'],
+    ['i-key','Rental Companies','Compact equipment selection, attachments and spare-parts planning.'],
+    ['i-hat','Contractors','Machine and work-tool matching around real job-site conditions.'],
+    ['i-globe','Equipment Distributors','Product range, export preparation and repeat-order support.']]
+    .map(p => `<div class="partner"><div class="ico"><svg><use href="#${p[0]}"/></svg></div><h3>${p[1]}</h3><p>${p[2]}</p></div>`).join('');
+}
+function faqHtml(list, openFirst) {
+  return list.map((q, i) => `<details${openFirst && i === 0 ? ' open' : ''}><summary>${esc(q[0])}</summary><p>${esc(q[1])}</p></details>`).join('');
+}
+function newsCard(n) {
+  return `<a class="article" href="${n.link || '#/news/' + n.slug}"><small>${esc(n.cat.toUpperCase())}</small><h3>${esc(n.title)}</h3><p>${esc(n.teaser)}</p><span class="go">Read Buyer Guide →</span></a>`;
+}
+function quoteBand(product) {
+  return `<section class="section quote"><div class="wrap">
+    <div><span class="eyebrow">Request a Quotation</span><h2>Find the Right Compact Machine for Your Market</h2>
+      <p>Tell us the machine type, working conditions, quantity, required attachments and destination country. We will recommend the most suitable configuration and provide a competitive quotation.</p>
+      <div class="actions"><a href="#/quote${product ? '?product=' + encodeURIComponent(product) : ''}" class="btn btn-light">Request a Quote</a>${waBtn(`Hello ${CONTACT.company}, I'd like a quotation${product ? ' for ' + product : ''}.`, 'Contact Us on WhatsApp', 'btn btn-outline-light')}</div></div>
+    <div class="info"><h3>Information for a Faster Quotation</h3><ul>
+      <li>Machine type, model and quantity</li><li>Working conditions and required attachments</li><li>Engine, certification or OEM requirements</li><li>Destination country and contact details</li></ul>
+      <small>You can also send us product photos, connection dimensions or reference models for a more accurate quotation.</small></div>
+  </div></section>`;
+}
+
+V.products = () => `
+${pageHero('All Products', 'All Machines', `${Object.keys(PRODUCTS).length} compact machines in three families. Filter by category or open a model for full specifications.`, [['Home', '#/'], ['Products']])}
+<section class="section"><div class="wrap">
+  <div class="filter" id="pfilter"><button class="on" data-f="all">All (${Object.keys(PRODUCTS).length})</button>${Object.entries(CATS).map(([s, c]) => `<button data-f="${s}">${c.name} (${c.models.length})</button>`).join('')}</div>
+  <div class="grid-3" id="pgrid">${Object.values(CATS).flatMap(c => c.models).map(productCard).join('')}</div>
+</div></section>
+${ctaBand('Not sure which model fits?', 'Describe your job site and we recommend the right machine and configuration.')}`;
+
+V.category = slug => {
+  const c = CATS[slug];
+  if (!c) return V.notfound();
+  return `
+<section class="page-hero"><div class="wrap pd-hero">
+  <div>${crumbs([['Home', '#/'], ['Products', '#/products'], [c.name]])}<span class="eyebrow">${c.models.length} models</span><h1>${c.name}</h1><p>${c.lead}</p>
+    <div class="actions" style="margin-top:24px"><a href="#models" class="btn btn-primary" data-scroll>Compare Models ↓</a>${waBtn(`Hello ${CONTACT.company}, I'm interested in your ${c.name.toLowerCase()}.`)}</div></div>
+  <div class="pd-art">${art(c.icon, 'float')}</div>
+</div></section>
+<section class="section" id="models"><div class="wrap">
+  <div class="section-head"><span class="eyebrow">Model Range</span><h2>Choose Your ${c.short}</h2><p>Open a model page for full technical data, options and a direct inquiry.</p></div>
+  <div class="grid-3">${c.models.map(productCard).join('')}</div>
+</div></section>
+<section class="section white"><div class="wrap">
+  <div class="section-head"><span class="eyebrow">Quick Comparison</span><h2>Key Figures at a Glance</h2></div>
+  <div class="table-scroll"><table class="cmp"><thead><tr><th>Model</th>${[0,1,2,3].map(i => `<th>${esc(PRODUCTS[c.models[0]].stats[i]?.[1] || '')}</th>`).join('')}</tr></thead>
+  <tbody>${c.models.map(m => { const p = PRODUCTS[m]; return `<tr><th><a href="#/product/${m}" style="color:var(--pink-600)">${esc(p.name.split(' ')[0])}</a></th>${[0,1,2,3].map(i => `<td>${esc(p.stats[i] ? p.stats[i][0] + (p.stats[i][1] !== PRODUCTS[c.models[0]].stats[i]?.[1] ? ' · ' + p.stats[i][1].toLowerCase() : '') : '–')}</td>`).join('')}</tr>`; }).join('')}</tbody></table></div>
+</div></section>
+<section class="section"><div class="wrap">
+  <div class="section-head"><span class="eyebrow">Applications</span><h2>Where ${c.name} Work Best</h2></div>
+  <div class="grid-4">${c.apps.map(a => `<div class="feat"><h3>${a[0]}</h3><p>${a[1]}</p></div>`).join('')}</div>
+</div></section>
+<section class="section tight"><div class="wrap">
+  <div class="section-head"><span class="eyebrow">FAQ</span><h2>${c.name} Questions</h2></div>
+  <div class="faq">${faqHtml(c.faq, true)}</div>
+</div></section>
+${quoteBand(c.name)}`;
+};
+
+V.product = slug => {
+  const p = PRODUCTS[slug];
+  if (!p) return V.notfound();
+  const c = CATS[p.cat];
+  const msg = `Hello ${CONTACT.company}, I'm interested in the ${p.name}. Please send me the price and configuration options.`;
+  const mailBody = `Hello ${CONTACT.company},\n\nI'm interested in the ${p.name}.\n\nQuantity:\nDestination country:\nRequired attachments:\nEngine preference:\n\nThank you!`;
+  const related = c.models.filter(m => m !== slug).slice(0, 3);
+  return `
+<section class="page-hero"><div class="wrap pd-hero">
+  <div>${crumbs([['Home', '#/'], [c.name, '#/category/' + p.cat], [p.name.split(' ')[0]]])}
+    <span class="eyebrow">${esc(c.short)} · ${esc(TAGS[slug] || '')}</span>
+    <h1>AVA's ${esc(p.name)}</h1><p>${esc(p.lead)}</p>
+    <div class="stats">${p.stats.map(s => `<div class="stat"><b>${esc(s[0])}</b><span>${esc(s[1])}</span></div>`).join('')}</div>
+    <div class="actions">${waBtn(msg, 'Get Price on WhatsApp', 'btn btn-primary')}${mailBtn('Inquiry: ' + p.name, mailBody)}</div>
+  </div>
+  <div class="pd-art"><span class="tag">${esc(TAGS[slug] || '')}</span>${art(icon(p), 'float')}</div>
+</div></section>
+<div class="subnav"><div class="wrap">
+  <a href="#specs" data-scroll>Specifications</a><a href="#applications-sec" data-scroll>Applications</a><a href="#features" data-scroll>Features</a><a href="#custom" data-scroll>Customization</a><a href="#attach-sec" data-scroll>Attachments</a><a href="#faq-sec" data-scroll>FAQ</a>
+</div></div>
+<section class="section" id="specs"><div class="wrap">
+  <div class="section-head"><span class="eyebrow">Technical Data</span><h2>${esc(p.name.split(' ')[0])} Specifications</h2><p>Final engine, cabin, packing and attachment configuration is confirmed before quotation.</p></div>
+  <div class="spec-wrap">
+    <div>
+      ${p.cmp ? `<div class="table-scroll" style="margin-bottom:24px"><table class="cmp"><thead><tr>${p.cmp[0].map(h => `<th>${esc(h)}</th>`).join('')}</tr></thead><tbody>${p.cmp.slice(1).map(r => `<tr><th>${esc(r[0])}</th>${r.slice(1).map(v => `<td>${esc(v)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>` : ''}
+      ${p.specs.length ? `<div class="table-scroll"><table><tbody>${p.specs.map(s => `<tr><th>${esc(s[0])}</th><td>${esc(s[1])}</td></tr>`).join('')}</tbody></table></div>` : ''}
+      <p class="spec-note">Specifications may change with engine and configuration. Certification and emission documents depend on the selected engine and destination market.</p>
+    </div>
+    <aside class="side-card"><h3>Get your ${esc(p.name.split(' ')[0])} price</h3><p>Tell us quantity, destination and attachments — we reply with a configuration-based quotation.</p>
+      <a href="#/quote?product=${encodeURIComponent(p.name)}" class="btn btn-light">Request a Quote</a>
+      ${waBtn(msg, 'WhatsApp', 'btn btn-outline-light')}
+      ${mailBtn('Inquiry: ' + p.name, mailBody, 'E-mail', 'btn btn-outline-light')}
+    </aside>
+  </div>
+</div></section>
+<section class="section white" id="applications-sec"><div class="wrap">
+  <div class="section-head"><span class="eyebrow">Applications</span><h2>Where the ${esc(p.name.split(' ')[0])} Works Best</h2></div>
+  <div class="grid-4">${c.apps.map(a => `<div class="feat"><h3>${a[0]}</h3><p>${a[1]}</p></div>`).join('')}</div>
+</div></section>
+<section class="section" id="features"><div class="wrap">
+  <div class="section-head"><span class="eyebrow">Why Choose AVA's</span><h2>A Practical Machine for Overseas Buyers</h2></div>
+  <div class="grid-3">${c.feats.map((f, i) => `<div class="feat"><div class="n">0${i + 1}</div><h3>${f[0]}</h3><p>${f[1]}</p></div>`).join('')}</div>
+</div></section>
+<section class="section white" id="custom"><div class="wrap grid-2" style="align-items:center">
+  <div><span class="eyebrow">Customization</span><h2>Color, Logo &amp; Function Options</h2>
+    <p style="color:var(--muted)">For distributors, rental companies and project buyers we discuss machine color, decals, engine options, hydraulic lines, attachment packages and packing. Our house colors are shown below — any RAL color is possible for batch orders.</p>
+    <div class="swatches"><span class="sw"><i style="background:#f0468a"></i>AVA Pink</span><span class="sw"><i style="background:#ff9fc4"></i>Blush</span><span class="sw"><i style="background:#e9d8ff"></i>Lilac</span><span class="sw"><i style="background:#4a1535"></i>Plum</span><span class="sw"><i style="background:#ffd9c7"></i>Peach</span></div></div>
+  <div class="grid-2">
+    <div class="feat"><h3>Color</h3><p>Match your brand color, dealer identity or project requirement.</p></div>
+    <div class="feat"><h3>Logo &amp; decals</h3><p>Your logo, warning labels and decals applied at the factory.</p></div>
+    <div class="feat"><h3>Function</h3><p>Engine, emission standard, canopy or cabin, hydraulic piping.</p></div>
+    <div class="feat"><h3>Packing</h3><p>Wooden box, frame or container loading to suit your order.</p></div>
+  </div>
+</div></section>
+<section class="section" id="attach-sec"><div class="wrap">
+  <div class="section-head"><span class="eyebrow">Attachments</span><h2>Optional Attachments</h2><p>Confirm mounting, hydraulic flow and pressure before ordering — we check every combination for you.</p></div>
+  <div class="pill-list" style="justify-content:center">${c.attach.map(a => `<span class="pill">${esc(a)}</span>`).join('')}</div>
+  <div style="text-align:center;margin-top:28px"><a href="#/attachments" class="btn btn-ghost">View Attachment Directory →</a></div>
+</div></section>
+<section class="section white" id="faq-sec"><div class="wrap">
+  <div class="section-head"><span class="eyebrow">FAQ</span><h2>Common Questions</h2></div>
+  <div class="faq">${faqHtml([[`How do I get the ${p.name.split(' ')[0]} price?`, 'Send your destination country, quantity, preferred engine and attachments. We reply with a configuration-based quotation.'], ...c.faq, ['Can you send photos and videos before shipping?', 'Yes — order-specific machine photos, nameplate photos and functional test videos can be provided before delivery.']], true)}</div>
+</div></section>
+<section class="section"><div class="wrap">
+  <div class="section-head"><span class="eyebrow">Related Models</span><h2>More ${c.name}</h2></div>
+  <div class="grid-3">${related.map(productCard).join('')}</div>
+</div></section>
+${ctaBand(`Ready to order the ${p.name.split(' ')[0]}?`, 'Get a quotation with the configuration, attachments and shipping that fit your market.', p.name)}`;
+};
+
+V.attachments = () => `
+${pageHero('Attachments', 'Attachments for Mini Excavators &amp; Skid Steers', 'Work tools for two carrier types. Confirm carrier model, mounting interface, hydraulic flow, pressure and coupler type before ordering.', [['Home', '#/'], ['Products', '#/products'], ['Attachments']])}
+<section class="section"><div class="wrap">
+  <div class="filter" id="afilter"><button class="on" data-f="all">All (${ATTACH.excavator.length + ATTACH.skid.length})</button><button data-f="excavator">Mini Excavator (${ATTACH.excavator.length})</button><button data-f="skid">Skid Steer (${ATTACH.skid.length})</button></div>
+  <div class="grid-4" id="agrid">${['excavator', 'skid'].flatMap(t => ATTACH[t].map(a => `<div class="att-card" data-t="${t}"><small>${t === 'skid' ? 'Skid Steer Loader' : 'Mini Excavator'}</small><b>${a[0]}</b><span>${a[1]}</span></div>`)).join('')}</div>
+</div></section>
+<section class="section white"><div class="wrap">
+  <div class="section-head"><span class="eyebrow">Not sure which fits?</span><h2>Check These Three Things</h2></div>
+  <div class="grid-3">
+    <div class="feat"><div class="n">01</div><h3>Machine model</h3><p>Tell us the carrier model and mounting plate or pin size.</p></div>
+    <div class="feat"><div class="n">02</div><h3>Flow &amp; pressure</h3><p>The tool must match the auxiliary hydraulic flow and pressure.</p></div>
+    <div class="feat"><div class="n">03</div><h3>Material &amp; work</h3><p>Soil, rock, concrete, brush or snow — this decides the tool size.</p></div>
+  </div>
+</div></section>
+${ctaBand('Build your attachment package', 'Send us the carrier model and the jobs you do — we match the right tools.', 'Attachments')}`;
+
+V.applications = () => {
+  const list = [
+    ['Landscaping & Gardens','excavator','c1',['t10-1','t12','s360'],'Compact width and light weight for backyards, gardens and private properties.'],
+    ['Farms & Orchards','tracked','c2',['t18','t460','sh-800dl'],'Ditching, feed and manure handling, orchard mowing and muddy lanes.'],
+    ['Construction & Trenching','excavator','c3',['gw18','gw25','t750'],'Utility trenches, foundations, site cleanup and material handling.'],
+    ['Rental Fleets','skid','c1',['t13pro','s390','v1000'],'Robust, simple machines that first-time users can operate quickly.'],
+    ['Slopes, Roadsides & Solar Farms','mower','c2',['tank','sh-lb','sh-1000b'],'Remote mowing where walk-behind machines are unsafe or too slow.'],
+    ['Indoor & Noise-Sensitive Work','excavator','c3',['t10-pro','t360','t390'],'Lithium battery options for greenhouses, halls and residential areas.']];
+  return `
+${pageHero('Applications', 'Machines for Different Working Conditions', 'Choose by task, surface, access, load and attachment requirements — not by model name alone.', [['Home', '#/'], ['Applications']])}
+<section class="section"><div class="wrap"><div class="grid-2">
+  ${list.map(a => `<div class="app ${a[2]}" style="min-height:340px">${art(a[1])}<h3>${a[0]}</h3><p>${a[4]}</p>
+    <div class="pill-list" style="margin-top:16px;position:relative">${a[3].map(m => `<a class="pill" href="#/product/${m}">${esc(PRODUCTS[m].name.split(' ')[0])} →</a>`).join('')}</div></div>`).join('')}
+</div></div></section>
+${ctaBand('Tell us about your job site', 'Photos of the working area help us recommend the right machine.')}`;
+};
+
+V.about = () => `
+${pageHero('About AVA\'s', 'Compact Machinery Support for Overseas Buyers', 'AVA\'s Cute Machinery supplies mini excavators, mini skid steers and remote mowers to dealers, rental companies, contractors and farms around the world.', [['Home', '#/'], ['About AVA\'s']])}
+<section class="section"><div class="wrap grid-2" style="align-items:center">
+  <div><span class="eyebrow">Who We Are</span><h2>Tough Machines, Pretty Colors</h2>
+    <p style="color:var(--muted);margin-bottom:14px">We believe compact machinery should be practical, reliable and a little bit joyful. Our range covers ${Object.keys(PRODUCTS).length} models across three families plus more than 40 attachments.</p>
+    <p style="color:var(--muted)">Instead of selling a model name, we start with your application — the ground, the access, the load and the tools — and match a configuration that fits. Every order is checked and documented before it ships.</p></div>
+  <div class="pd-art">${art('skid', 'float')}</div>
+</div></section>
+<section class="section white"><div class="wrap">
+  <div class="section-head"><span class="eyebrow">Why Choose AVA's</span><h2>What We Bring to Your Business</h2></div>
+  <div class="grid-4">
+    <div class="feat"><h3>Wide product range</h3><p>Excavators from 1 to 2.8 t, wheeled, tracked and ride-on loaders, remote mowers.</p></div>
+    <div class="feat"><h3>Application guidance</h3><p>We recommend machines by job-site conditions, not catalog numbers.</p></div>
+    <div class="feat"><h3>Flexible configurations</h3><p>Engines, emissions, cabins, hydraulics, colors and logos.</p></div>
+    <div class="feat"><h3>Export support</h3><p>Packing, loading photos, documents and shipping communication.</p></div>
+  </div>
+</div></section>
+<section class="section"><div class="wrap">
+  <div class="section-head"><span class="eyebrow">How We Work</span><h2>From Inquiry to Delivery</h2></div>
+  <div class="grid-4">
+    <div class="step" style="background:#fff;border-color:var(--pink-100)"><div class="num" style="color:var(--pink-500)">01</div><h3>Confirm application</h3><p style="color:var(--muted)">Tell us the job, ground and access.</p></div>
+    <div class="step" style="background:#fff;border-color:var(--pink-100)"><div class="num" style="color:var(--pink-500)">02</div><h3>Match model</h3><p style="color:var(--muted)">We recommend size, chassis and power.</p></div>
+    <div class="step" style="background:#fff;border-color:var(--pink-100)"><div class="num" style="color:var(--pink-500)">03</div><h3>Check options</h3><p style="color:var(--muted)">Engine, emission, cabin, color and tools.</p></div>
+    <div class="step" style="background:#fff;border-color:var(--pink-100)"><div class="num" style="color:var(--pink-500)">04</div><h3>Inspect &amp; ship</h3><p style="color:var(--muted)">50-point check, photos, packing, loading.</p></div>
+  </div>
+</div></section>
+<section class="section white"><div class="wrap">
+  <div class="section-head"><span class="eyebrow">Cooperation Network</span><h2>Who We Work With</h2></div>
+  <div class="grid-4">${partners()}</div>
+</div></section>
+${quoteBand()}`;
+
+V.news = () => `
+${pageHero('News Center', 'Buyer Guides &amp; Technical Resources', 'Practical guides to help you compare machines and prepare an accurate inquiry.', [['Home', '#/'], ['News']])}
+<section class="section"><div class="wrap">
+  <div class="section-head"><span class="eyebrow">What are you trying to figure out?</span><h2>Start Here</h2></div>
+  <div class="grid-4" style="margin-bottom:60px">
+    <a class="res" href="#/news/how-to-choose-mini-excavator"><small>MINI EXCAVATOR</small><h3>Which size do I need?</h3><span class="go">READ GUIDE →</span></a>
+    <a class="res" href="#/news/mini-excavator-attachments-guide"><small>ATTACHMENTS</small><h3>Which bucket, auger or breaker fits?</h3><span class="go">READ GUIDE →</span></a>
+    <a class="res" href="#/news/remote-control-mower-applications"><small>REMOTE MOWER</small><h3>I have slopes or orchard rows to cut</h3><span class="go">READ GUIDE →</span></a>
+    <a class="res" href="#/news/how-to-choose-mini-skid-steer-loader"><small>SKID STEER</small><h3>Wheels, tracks or hydraulics?</h3><span class="go">READ GUIDE →</span></a>
+  </div>
+  <div class="section-head"><span class="eyebrow">All Guides</span><h2>Practical Guides Before You Ask for a Quote</h2></div>
+  <div class="grid-3">${NEWS.map(newsCard).join('')}</div>
+</div></section>
+${ctaBand('Send photos of your working area', 'We review your site and recommend the right machine for free.')}`;
+
+V.article = slug => {
+  const n = NEWS.find(x => x.slug === slug);
+  if (!n || !n.body) return V.notfound();
+  const others = NEWS.filter(x => x.slug !== slug).slice(0, 3);
+  return `
+${pageHero(n.cat, esc(n.title), esc(n.teaser), [['Home', '#/'], ['News', '#/news'], [n.cat]])}
+<section class="section"><div class="wrap"><article class="prose">${n.body}</article></div></section>
+<section class="section white"><div class="wrap"><div class="section-head"><span class="eyebrow">Keep Reading</span><h2>More Buyer Guides</h2></div><div class="grid-3">${others.map(newsCard).join('')}</div></div></section>
+${ctaBand('Have a question about your project?', 'Our team answers by e-mail or WhatsApp.')}`;
+};
+
+V.pdi = () => {
+  let k = 0;
+  return `
+${pageHero('Quality Check Before Delivery', '50-Point Pre-Shipment Inspection', 'Every order is checked against the confirmed configuration, machine condition, functional operation, attachments, accessories and packing.', [['Home', '#/'], ['Pre-Shipment Inspection']])}
+<section class="section"><div class="wrap">
+  <div class="grid-3">${PDI.map(g => `<div class="pdi-group"><h3>${g[0]} <i>${g[1].length}</i></h3><ol>${g[1].map(it => `<li><b>${String(++k).padStart(2, '0')}</b>${it}</li>`).join('')}</ol></div>`).join('')}</div>
+  <div class="box" style="max-width:820px;margin:40px auto 0;text-align:center"><h3>Photos and videos before shipping</h3><p style="color:var(--muted);margin-bottom:16px">Ask for an order-specific PDI report with machine photos, nameplate and functional test videos.</p>
+    <div class="actions" style="justify-content:center"><a href="#/quote?product=Pre-shipment%20PDI%20Report" class="btn btn-primary">Request PDI Report</a><button class="btn btn-ghost" onclick="window.print()">Print Checklist</button></div></div>
+</div></section>`;
+};
+
+V.quote = params => {
+  const pre = params.get('product') || '';
+  const all = Object.values(CATS).flatMap(c => c.models.map(m => PRODUCTS[m].name));
+  const extra = ['Attachments', 'Dealer Cooperation', 'Pre-shipment PDI Report', 'Other / Not sure'];
+  const opts = [...all, ...extra];
+  if (pre && !opts.includes(pre)) opts.unshift(pre);
+  return `
+${pageHero('Request a Quote', 'Tell Us What You Need', 'Fill in the form and your e-mail app opens with everything prepared — or send it straight to WhatsApp.', [['Home', '#/'], ['Request a Quote']])}
+<section class="section"><div class="wrap form-wrap">
+  <form class="card" id="qform" novalidate>
+    <div class="fgrid">
+      <div class="field"><label for="q-name">Full name <em>*</em></label><input id="q-name" name="name" required autocomplete="name"></div>
+      <div class="field"><label for="q-country">Country <em>*</em></label><input id="q-country" name="country" required autocomplete="country-name"></div>
+      <div class="field"><label for="q-email">E-mail <em>*</em></label><input id="q-email" name="email" type="email" required autocomplete="email"></div>
+      <div class="field"><label for="q-phone">Phone / WhatsApp / Telegram</label><input id="q-phone" name="phone" autocomplete="tel"></div>
+      <div class="field"><label for="q-product">Interested product <em>*</em></label><select id="q-product" name="product" required>
+        <option value="">Please choose…</option>${opts.map(o => `<option${o === pre ? ' selected' : ''}>${esc(o)}</option>`).join('')}</select></div>
+      <div class="field"><label for="q-qty">Quantity</label><input id="q-qty" name="qty" type="number" min="1" placeholder="e.g. 2"></div>
+      <div class="field full"><label for="q-msg">Message / requirements <em>*</em></label><textarea id="q-msg" name="msg" required placeholder="Working conditions, attachments, engine preference, destination port…"></textarea></div>
+    </div>
+    <div class="form-actions"><button type="submit" class="btn btn-primary" data-via="mail"><svg class="ico-inline"><use href="#i-mail"/></svg>Send by E-mail</button>
+      <button type="submit" class="btn btn-wa" data-via="wa"><svg class="ico-inline"><use href="#i-wa"/></svg>Send via WhatsApp</button></div>
+    <p class="form-msg" id="q-status" role="status"></p>
+  </form>
+  <div>
+    <div class="contact-list">
+      <a class="contact-item" data-mail href="#"><div class="ico"><svg><use href="#i-mail"/></svg></div><div><b>E-mail</b><span>${esc(CONTACT.email)}</span></div></a>
+      <a class="contact-item" data-wa href="#" target="_blank" rel="noopener"><div class="ico"><svg><use href="#i-wa"/></svg></div><div><b>WhatsApp</b><span>${CONTACT.whatsapp ? '+' + esc(CONTACT.whatsapp) : 'Chat with us'}</span></div></a>
+    </div>
+    <div class="box"><h3>Information for a faster quotation</h3><ul style="margin:10px 0 0 20px;color:var(--muted)"><li>Machine type, model and quantity</li><li>Working conditions and required attachments</li><li>Engine, certification or OEM requirements</li><li>Destination country and contact details</li></ul>
+      <p style="color:var(--muted);margin-top:12px;font-size:14px">You can also send product photos, connection dimensions or reference models.</p></div>
+  </div>
+</div></section>`;
+};
+
+const LEGAL = {
+  'privacy-policy': ['Privacy Policy', `<p>This website does not use a contact database. When you use the quote form, your e-mail app or WhatsApp opens with your message — the data is sent only when you press send there.</p><h2>What we receive</h2><p>Name, country, e-mail, phone number and the details you write in your message.</p><h2>How we use it</h2><p>Only to answer your inquiry and prepare a quotation. We do not sell or share your data.</p><h2>Your rights</h2><p>You can ask us at any time to see, correct or delete your data by e-mail.</p><div class="callout">Placeholder text — please have your privacy policy reviewed for your country before going live.</div>`],
+  'terms-conditions': ['Terms &amp; Conditions', `<p>Product information on this website is provided for general guidance. Specifications, configurations and documents are confirmed in writing for each order.</p><h2>Quotations</h2><p>Prices are given per quotation and depend on configuration, quantity and destination.</p><h2>Delivery</h2><p>Packing, loading and shipping terms are agreed per order.</p><div class="callout">Placeholder text — please replace with your own terms before going live.</div>`],
+  'cookie-policy': ['Cookie Policy', `<p>This website does not set tracking or advertising cookies. Fonts are loaded from Google Fonts.</p><div class="callout">Placeholder text — update this page if you add analytics or other services.</div>`]
+};
+V.legal = key => LEGAL[key] ? `${pageHero('Legal', LEGAL[key][0], '', [['Home', '#/'], [LEGAL[key][0].replace('&amp;', '&')]])}<section class="section"><div class="wrap"><div class="prose">${LEGAL[key][1]}</div></div></section>` : V.notfound();
+
+V.notfound = () => `${pageHero('Oops', 'Page not found', 'This page does not exist — let\'s get you back to the machines.', [['Home', '#/']])}<section class="section"><div class="wrap" style="text-align:center"><a href="#/" class="btn btn-primary">Back to Home</a></div></section>`;
+
+/* ---------- router ---------- */
+const TITLES = { home: "AVA's Cute Machinery" };
+function route() {
+  const raw = location.hash.replace(/^#/, '') || '/';
+  if (!raw.startsWith('/')) return; // in-page anchor
+  const [path, qs] = raw.split('?');
+  const params = new URLSearchParams(qs || '');
+  const parts = path.split('/').filter(Boolean);
+  let html, nav = parts[0] || 'home', title = '';
+  switch (parts[0]) {
+    case undefined: html = V.home(); break;
+    case 'products': html = V.products(); title = 'All Machines'; break;
+    case 'category': html = V.category(parts[1]); nav = 'products'; title = CATS[parts[1]]?.name; break;
+    case 'product': html = V.product(parts[1]); nav = 'products'; title = PRODUCTS[parts[1]]?.name; break;
+    case 'attachments': html = V.attachments(); nav = 'products'; title = 'Attachments'; break;
+    case 'applications': html = V.applications(); title = 'Applications'; break;
+    case 'about': html = V.about(); title = 'About'; break;
+    case 'news': html = parts[1] ? V.article(parts[1]) : V.news(); title = parts[1] ? NEWS.find(n => n.slug === parts[1])?.title : 'News'; break;
+    case 'pre-shipment-inspection': html = V.pdi(); title = 'Pre-Shipment Inspection'; break;
+    case 'quote': html = V.quote(params); title = 'Request a Quote'; break;
+    default: html = LEGAL[parts[0]] ? V.legal(parts[0]) : V.notfound(); title = LEGAL[parts[0]]?.[0].replace('&amp;', '&');
+  }
+  $('#app').innerHTML = html;
+  document.title = title ? `${title} | AVA's Cute Machinery` : TITLES.home;
+  document.querySelectorAll('[data-nav]').forEach(a => a.classList.toggle('on', a.dataset.nav === nav));
+  $('#nav').classList.remove('open'); $('#menu-btn').setAttribute('aria-expanded', 'false');
+  window.scrollTo({ top: 0, behavior: 'instant' });
+  wire();
+  if (!parts[0]) startSlider(); else stopSlider();
+}
+
+function wire() {
+  const generic = `Hello ${CONTACT.company}, I'd like more information about your machines.`;
+  document.querySelectorAll('[data-wa]').forEach(a => { a.href = waHref(generic); a.target = '_blank'; a.rel = 'noopener'; });
+  document.querySelectorAll('[data-mail]').forEach(a => { a.href = mailHref(`Inquiry – ${CONTACT.company}`); });
+  document.querySelectorAll('[data-scroll]').forEach(a => a.addEventListener('click', e => {
+    e.preventDefault(); const t = document.getElementById(a.getAttribute('href').slice(1));
+    if (t) window.scrollTo({ top: t.getBoundingClientRect().top + scrollY - 150, behavior: 'smooth' });
+  }));
+  const filter = (barId, gridId, attr) => {
+    const bar = $('#' + barId); if (!bar) return;
+    bar.addEventListener('click', e => {
+      const b = e.target.closest('button'); if (!b) return;
+      bar.querySelectorAll('button').forEach(x => x.classList.toggle('on', x === b));
+      $('#' + gridId).querySelectorAll(':scope > *').forEach(el => { el.hidden = b.dataset.f !== 'all' && attr(el) !== b.dataset.f; });
+    });
+  };
+  const pg = $('#pgrid');
+  if (pg) [...pg.children].forEach((el, i) => { el.dataset.c = PRODUCTS[Object.values(CATS).flatMap(c => c.models)[i]].cat; });
+  filter('pfilter', 'pgrid', el => el.dataset.c);
+  filter('afilter', 'agrid', el => el.dataset.t);
+  const f = $('#qform');
+  if (f) f.addEventListener('submit', e => {
+    e.preventDefault();
+    const via = e.submitter?.dataset.via || 'mail';
+    const d = Object.fromEntries(new FormData(f));
+    const missing = [['name', 'Full name'], ['country', 'Country'], ['email', 'E-mail'], ['product', 'Product'], ['msg', 'Message']].filter(([k]) => !String(d[k] || '').trim()).map(x => x[1]);
+    const st = $('#q-status');
+    if (missing.length) { st.textContent = 'Please fill in: ' + missing.join(', ') + '.'; return; }
+    if (!/^\S+@\S+\.\S+$/.test(d.email)) { st.textContent = 'Please enter a valid e-mail address, e.g. name@company.com.'; return; }
+    const text = `Quote request – ${d.product}\n\nName: ${d.name}\nCountry: ${d.country}\nE-mail: ${d.email}\nPhone: ${d.phone || '-'}\nProduct: ${d.product}\nQuantity: ${d.qty || '-'}\n\n${d.msg}`;
+    if (via === 'wa') { window.open(waHref(text), '_blank', 'noopener'); st.textContent = 'WhatsApp opened — press send there to deliver your request.'; }
+    else { location.href = mailHref(`Quote request – ${d.product}`, text); st.textContent = 'Your e-mail app opened — press send there to deliver your request.'; }
+  });
+}
+
+/* ---------- home slider ---------- */
+const SLIDES = [
+  {eye:'Mini Excavators',title:'Compact Construction Machinery for <em>Dealers, Contractors</em> and Farms',lead:"Compare AVA's mini excavators for landscaping, trenching, farms, gardens and small construction projects.",chips:['Compact Crawler Models','Attachment Options','OEM Support','Export Preparation'],btn:'Explore Mini Excavators →',href:'#/category/mini-excavators',svg:'excavator'},
+  {eye:'Skid Steer Loaders',title:'Wheel &amp; Tracked <em>Skid Steers</em> for Every Job Site',lead:'Compact loaders for material handling, grading and attachment-based work — in any OEM color you like.',chips:['Wheeled & Tracked','Ride-On Models','Auxiliary Hydraulics','OEM Colors'],btn:'Explore Skid Steers →',href:'#/category/skid-steer-loaders',svg:'skid'},
+  {eye:'Remote Control Mowers',title:'Remote Mowers for <em>Slopes, Orchards</em> and Solar Farms',lead:'Tracked, remote-controlled flail mowers for steep terrain and routine vegetation management.',chips:['Up to 55° Slopes','Tracked Chassis','Flail Cutting','Safe Remote Operation'],btn:'Explore Remote Mowers →',href:'#/category/remote-control-mowers',svg:'mower'}
+];
+let cur = 0, timer = null;
+function showSlide(i) {
+  const s = SLIDES[i]; if (!$('#h-title')) return; cur = i;
+  $('#h-eye').textContent = s.eye; $('#h-title').innerHTML = s.title; $('#h-lead').textContent = s.lead;
+  $('#h-chips').innerHTML = s.chips.map(c => `<span class="chip">${esc(c)}</span>`).join('');
+  $('#h-btn').textContent = s.btn; $('#h-btn').href = s.href; $('#h-svg').setAttribute('href', '#' + s.svg);
+  [...$('#dots').children].forEach((d, j) => d.classList.toggle('on', j === i));
+}
+function startSlider() {
+  const dots = $('#dots');
+  SLIDES.forEach((_, i) => { const b = document.createElement('button'); b.setAttribute('aria-label', 'Slide ' + (i + 1)); b.onclick = () => { showSlide(i); restart(); }; dots.appendChild(b); });
+  showSlide(0); restart();
+}
+function restart() { clearInterval(timer); timer = setInterval(() => showSlide((cur + 1) % SLIDES.length), 6000); }
+function stopSlider() { clearInterval(timer); }
+
+/* ---------- love popups (once per page load) ---------- */
+(function lovePopups() {
+  const hearts = () => Array.from({ length: 14 }, (_, i) =>
+    `<span style="left:${(i * 7.3 + 3) % 100}%;animation-delay:${(i * 0.37) % 4}s;font-size:${20 + (i * 11) % 30}px">♥</span>`).join('');
+  function show(html, ms, done) {
+    const el = document.createElement('div');
+    el.className = 'love';
+    el.setAttribute('role', 'dialog');
+    el.setAttribute('aria-live', 'polite');
+    el.innerHTML = `<div class="love-card"><div class="hearts">${hearts()}</div>${html}<small>tap to close</small></div>`;
+    document.body.appendChild(el);
+    let closed = false;
+    const close = () => { if (closed) return; closed = true; el.classList.add('out'); setTimeout(() => { el.remove(); done && done(); }, 600); };
+    el.addEventListener('click', close);
+    setTimeout(close, ms);
+  }
+  setTimeout(() => show(`<h2>ALEKS<br><span style="white-space:nowrap"><span class="big-heart">♥</span> LOVES <span class="big-heart">♥</span></span><br>AVA</h2>`, 5000, () => {
+    setTimeout(() => {
+      show(`<h2 style="font-size:clamp(34px,7.5vw,80px)">HOPE TO SEE YOU SOON IN CHINA <span class="big-heart">♥</span></h2><p>ALEKS + AVA</p>`, 5000);
+    }, 15000);
+  }), 10000);
+})();
+
+$('#menu-btn').addEventListener('click', () => { const o = $('#nav').classList.toggle('open'); $('#menu-btn').setAttribute('aria-expanded', o); });
+window.addEventListener('hashchange', route);
+route();
+</script>
+</body>
+</html>
